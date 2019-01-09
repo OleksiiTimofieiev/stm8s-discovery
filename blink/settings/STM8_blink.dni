@@ -36,7 +36,7 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [DebugChecksum]
-Checksum=-892909022
+Checksum=1790865101
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -46,6 +46,8 @@ LogEnabled=0
 GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
+[Breakpoints]
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -53,8 +55,8 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Breakpoints]
-Count=0
 [Aliases]
-Count=0
+A0=_ "C:\STM8S_Discovery\stm8s-discovery\STM8S_StdPeriph_Driver\src\stm8s_gpio.c" ""
+A1=_ "C:\STM8S_Discovery\stm8s-discovery\main.c" ""
+Count=2
 SuppressDialog=0
