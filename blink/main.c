@@ -1,8 +1,9 @@
 #include "stm8s.h"
+#include "stdio.h"
 
 void    delay(void)
 {
-  for(unsigned long delay_count = 0; delay_count < 20000; delay_count++);
+  for(unsigned long delay_count = 0; delay_count < 10000; delay_count++);
 }
 
 void main( void )

@@ -4,6 +4,9 @@
   <project>
     <path>$WS_DIR$\STM8_blink.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\..\uart2\uart2.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
