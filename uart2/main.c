@@ -54,8 +54,15 @@
   * @param  None
   * @retval None
   */
+void    delay(void)
+{
+  for(unsigned long delay_count = 0; delay_count < 20000; delay_count++);
+}
+
 void main(void)
 {
+  GPIO_Init(GPIOD, GPIO_PIN_0, GPIO_MODE_OUT_PP_LOW_FAST);
+  
   char ans;
   /*High speed internal clock prescaler: 1*/
   CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);
@@ -80,7 +87,14 @@ void main(void)
   while (1)
   {
     ans = getchar();
-    printf("%c", ans);  
+    if (ans == 'a' || ans == 'b')
+    {
+      GPIO_WriteHigh(GPIOD, GPIO_PIN_0);
+      delay();
+      printf("%c", ans);
+      GPIO_WriteLow(GPIOD, GPIO_PIN_0);
+      delay();
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-"C:\STM8S_Discovery\stm8s-discovery\uart2\STM8S_StdPeriph_Driver\src\stm8s_uart2.c"
+"C:\STM8S_Discovery\stm8s-discovery\uart2\STM8S_StdPeriph_Driver\src\stm8s_gpio.c"
 -std=c99
 -ferror-limit=100
 -I
@@ -222,7 +222,7 @@ C:\STM8S_Discovery\stm8s-discovery\uart2
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=593160
 -D__DATE__="Jan 10 2019"
--D__TIME__="16:28:03"
+-D__TIME__="16:28:02"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

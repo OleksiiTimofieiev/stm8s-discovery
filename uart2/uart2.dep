@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>2311282575</fileChecksum>
+  <fileChecksum>1802058112</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -48,7 +48,10 @@
       <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
       <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
       <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\stm8s_gpio.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\stm8s_gpio.pbi</file>
       <file>$PROJ_DIR$\..\blink\main.c</file>
+      <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</file>
       <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
       <file>$TOOLKIT_DIR$\config\lnkstm8s105c6.icf</file>
       <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
@@ -136,7 +139,30 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 44 30 26 34 45 43</file>
+          <file> 47 30 26 42 34 48 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 11 0 20 8 1 2 3 7 4 10 6 9 5 12 13 14 15 16 17 18 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 0 20 8 1 2 3 7 4 10 6 9 5 12 13 14 15 16 17 18 19</file>
         </tool>
       </inputs>
     </file>

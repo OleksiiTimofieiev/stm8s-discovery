@@ -9,6 +9,7 @@
       <file>$PROJ_DIR$\Debug\Obj\stm8s_gpio.o</file>
       <file>$PROJ_DIR$\stm8s_conf.h</file>
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_gpio.c</file>
+      <file>$PROJ_DIR$\..\uart2\main.c</file>
       <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
       <file>$PROJ_DIR$\main.c</file>
       <file>$TOOLKIT_DIR$\config\lnkstm8s105c6.icf</file>
@@ -58,17 +59,17 @@
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 14</file>
+          <file> 15</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 15 36 1 31 24 7 16 37 40 27 13 17 25 12 20 34 21 28 8 32 35</file>
+          <file> 16 37 1 32 25 8 17 38 41 28 14 18 26 13 21 35 22 29 9 33 36</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 15 36 1 31 24 7 16 37 40 27 13 17 25 12 20 34 21 28 8 32 35</file>
+          <file> 16 37 1 32 25 8 17 38 41 28 14 18 26 13 21 35 22 29 9 33 36</file>
         </tool>
       </inputs>
     </file>
@@ -77,21 +78,21 @@
       <outputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 39</file>
+          <file> 40</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 23</file>
+          <file> 24</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 36 1 31 24 7 16 37 40 15 27 13 17 25 12 20 34 21 28 8 32 35 38 29 19 33 26 41 30 3 22 11</file>
+          <file> 37 1 32 25 8 17 38 41 16 28 14 18 26 13 21 35 22 29 9 33 36 39 30 20 34 27 42 31 4 23 12</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 36 1 31 24 7 16 37 40 15 27 13 17 25 12 20 34 21 28 8 32 35 38 29 19 33 26 41 30 3 22 11</file>
+          <file> 37 1 32 25 8 17 38 41 16 28 14 18 26 13 21 35 22 29 9 33 36 39 30 20 34 27 42 31 4 23 12</file>
         </tool>
       </inputs>
     </file>
@@ -100,7 +101,7 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 5 39 0 18 6</file>
+          <file> 6 40 0 19 7</file>
         </tool>
       </inputs>
     </file>
@@ -109,7 +110,7 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 9</file>
+          <file> 10</file>
         </tool>
       </outputs>
     </file>
