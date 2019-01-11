@@ -1,4 +1,4 @@
-"C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt\STM8S_StdPeriph_Driver\src\stm8s_uart2.c"
+"C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt\STM8S_StdPeriph_Driver\src\stm8s_clk.c"
 -std=c99
 -ferror-limit=100
 -I
@@ -13,6 +13,7 @@ C:\Program Files\IAR Systems\Embedded Workbench 6.5\stm8\inc\c
 C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt\STM8S_StdPeriph_Driver\inc
 -I
 C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt
+-DNDEBUG=0
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -222,7 +223,7 @@ C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=593160
 -D__DATE__="Jan 11 2019"
--D__TIME__="14:00:26"
+-D__TIME__="12:26:01"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
@@ -247,6 +248,7 @@ C:\STM8S_Discovery\stm8s-discovery\uart2_interrupt
 -D__EDG_SYSV=0
 -D__EDG_ANSIC=1
 -D__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED=1
+-DNDEBUG=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 6.5\stm8\LIB\dlstm8smn.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 6.5\\stm8\\LIB\\dlstm8smn.h"
 -D__VERSION__="IAR C/C++ Compiler V1.40.1.50106 for STM8"
