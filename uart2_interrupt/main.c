@@ -27,10 +27,11 @@ int   i = 0;
     //{
         /* Disable the UART2 Receive interrupt */
         
-        if (i < 5)
+        if (i <= 5)
         {
           char c = UART2_ReceiveData8();
           string[i] = c;
+          i++;
         }
         else
         {
@@ -38,7 +39,7 @@ int   i = 0;
           UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
           printf("%s\n", string);
         }
-        i++;
+        
 }
 
 #endif /* STM8S105*/

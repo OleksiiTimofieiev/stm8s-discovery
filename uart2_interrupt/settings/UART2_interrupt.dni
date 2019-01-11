@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1890674126
+Checksum=1805925832
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -49,12 +49,6 @@ ActionState=1
 [Trace1]
 Enabled=0
 ShowSource=1
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[Aliases]
-Count=0
-SuppressDialog=0
 [DataSample]
 LogEnabled=0
 GraphEnabled=0
@@ -66,3 +60,9 @@ Count=0
 LoggingEnabled=_ 0
 LogFile=_ ""
 Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Aliases]
+Count=0
+SuppressDialog=0

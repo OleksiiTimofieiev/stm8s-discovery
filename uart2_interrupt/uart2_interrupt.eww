@@ -5,7 +5,7 @@
     <path>$WS_DIR$\..\uart2\uart2.ewp</path>
   </project>
   <project>
-    <path>$WS_DIR$\UART2_interrupt.ewp</path>
+    <path>$WS_DIR$\uart2_interrupt.ewp</path>
   </project>
   <batchBuild/>
 </workspace>
