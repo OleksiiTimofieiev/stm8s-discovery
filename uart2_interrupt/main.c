@@ -1,16 +1,15 @@
 #include "stm8s.h"
 #include "stdio.h"
+#include "stdlib.h"
 
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
 
+char string[6] = { 0x0 };
+int   i = 0;
+
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
-/**
-  * @brief  UART2 TX interrupt routine.
-  * @param None
-  * @retval
-  * None
-  */
+
  INTERRUPT_HANDLER(UART2_TX_IRQHandler, 20)
 {
     /* In order to detect unexpected events during development,
@@ -18,32 +17,28 @@
     */
 }
 
-/**
-  * @brief  UART2 RX interrupt routine.
-  * @param None
-  * @retval
-  * None
-  */
+
  INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 {
-    /* In order to detect unexpected events during development,
-       it is recommended to set a breakpoint on the following instruction.
-    */
-  
     /* Read one byte from the receive data register */
     //RxBuffer2[IncrementVar_RxCounter2()] = UART3_ReceiveData8();
 
     //if (GetVar_RxCounter2() == GetVar_NbrOfDataToRead2())
     //{
         /* Disable the UART2 Receive interrupt */
-  
-        char c = UART2_ReceiveData8();
-        putchar(c);
-        /* disable interrupt */
-        //UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
-    //}
-  
-  
+        
+        if (i < 5)
+        {
+          char c = UART2_ReceiveData8();
+          string[i] = c;
+        }
+        else
+        {
+          printf("%s\n", "interrupt stopper");
+          UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
+          printf("%s\n", string);
+        }
+        i++;
 }
 
 #endif /* STM8S105*/

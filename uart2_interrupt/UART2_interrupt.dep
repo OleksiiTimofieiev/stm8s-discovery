@@ -54,8 +54,10 @@
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_rst.h</file>
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_clk.h</file>
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_beep.h</file>
+      <file>$TOOLKIT_DIR$\doc\infocenter\index.ENU.html</file>
       <file>$PROJ_DIR$\Debug\Obj\stm8s_it.o</file>
       <file>$PROJ_DIR$\Debug\Obj\stm8s_it.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -104,11 +106,11 @@
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 43 4 9 44 47 46 15 7 42 13 11 10 45 12 8 32 22 26 16 28 20 23 19 3 24 21 30 25 27 29 33</file>
+          <file> 43 4 9 44 47 46 15 7 42 13 11 10 45 12 8 32 22 26 16 28 20 23 19 3 24 21 30 25 27 29 33 51</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 43 4 9 44 47 46 15 7 42 13 11 10 45 12 8 32 22 26 16 28 20 23 19 3 24 21 30 25 27 29 33</file>
+          <file> 43 4 9 44 47 46 15 7 42 13 11 10 45 12 8 32 22 26 16 28 20 23 19 3 24 21 30 25 27 29 33 51</file>
         </tool>
       </inputs>
     </file>
@@ -140,7 +142,7 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 49</file>
+          <file> 50</file>
         </tool>
       </outputs>
     </file>
