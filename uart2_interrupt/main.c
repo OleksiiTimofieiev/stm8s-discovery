@@ -5,8 +5,8 @@
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
 
-char string[6] = { 0x0 };
-int   i = 0;
+char string[6] = { 0x0 }; /* may be used like extern variable */
+int   i = 0; /* may be used like extern variable */
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 
@@ -27,19 +27,18 @@ int   i = 0;
     //{
         /* Disable the UART2 Receive interrupt */
         
-        if (i <= 5)
-        {
-          char c = UART2_ReceiveData8();
-          string[i] = c;
-          i++;
-        }
-        else
-        {
-          printf("%s\n", "interrupt stopper");
-          UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
-          printf("%s\n", string);
-        }
-        
+    if (i <= 5)
+    {
+      char c = UART2_ReceiveData8();
+      string[i] = c;
+      i++;
+    }
+    else
+    {
+      printf("%s\n", "interrupt stopper");
+      UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
+      printf("%s\n", string);
+    }
 }
 
 #endif /* STM8S105*/
