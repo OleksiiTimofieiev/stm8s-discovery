@@ -3,7 +3,7 @@
 <Workspace>
   <ConfigDictionary>
     
-  <CurrentConfigs><Project>uart2_interrupt/Debug</Project><Project>uart2/Debug</Project></CurrentConfigs><CurrentProj>uart2_interrupt</CurrentProj><OverviewSelected>0</OverviewSelected></ConfigDictionary>
+  <CurrentConfigs><Project>uart2/Debug</Project><Project>uart2_interrupt/Debug</Project></CurrentConfigs><CurrentProj>uart2_interrupt</CurrentProj><OverviewSelected>0</OverviewSelected></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -28,7 +28,7 @@
     <Windows>
       
       
-    <Wnd0>
+    <Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-29422-14352</Identity>
@@ -44,7 +44,7 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd0><Wnd2><Tabs><Tab><Identity>TabID-4813-9064</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>uart2</ExpandedNode><ExpandedNode>uart2_interrupt</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1><Wnd3><Tabs><Tab><Identity>TabID-4813-9064</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>uart2</ExpandedNode><ExpandedNode>uart2_interrupt</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
       
       
@@ -57,7 +57,7 @@
       
       
       
-    <Top><Row0><Sizes><Toolbar-01c84910><key>iaridepm.enu1</key></Toolbar-01c84910></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>533</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>164069</sizeHorzCX><sizeHorzCY>257732</sizeHorzCY><sizeVertCX>164069</sizeVertCX><sizeVertCY>689433</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1221</Right><x>-2</x><y>-2</y><xscreen>1223</xscreen><yscreen>200</yscreen><sizeHorzCX>1003281</sizeHorzCX><sizeHorzCY>257732</sizeHorzCY><sizeVertCX>164069</sizeVertCX><sizeVertCY>257732</sizeVertCY></Rect></Wnd0></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01c28788><key>iaridepm.enu1</key></Toolbar-01c28788></Sizes></Row0></Top><Left><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>533</Bottom><Right>198</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>164069</sizeHorzCX><sizeHorzCY>257732</sizeHorzCY><sizeVertCX>164069</sizeVertCX><sizeVertCY>689433</sizeVertCY></Rect></Wnd3></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1221</Right><x>-2</x><y>-2</y><xscreen>1223</xscreen><yscreen>200</yscreen><sizeHorzCX>1003281</sizeHorzCX><sizeHorzCY>257732</sizeHorzCY><sizeVertCX>164069</sizeVertCX><sizeVertCY>257732</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
