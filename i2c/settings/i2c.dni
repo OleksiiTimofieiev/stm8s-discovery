@@ -36,7 +36,11 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [DebugChecksum]
-Checksum=2012841778
+Checksum=198764584
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
 [DataSample]
 LogEnabled=0
 GraphEnabled=0
@@ -54,7 +58,3 @@ LogFile=_ ""
 [Aliases]
 Count=0
 SuppressDialog=0
-[CallStack]
-ShowArgs=0
-[Disassembly]
-MixedMode=1

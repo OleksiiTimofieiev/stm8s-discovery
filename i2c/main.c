@@ -9,6 +9,7 @@
 
 char string[6] = { 0x0 }; /* may be used like extern variable */
 int   i = 0; /* may be used like extern variable */
+u8		iTmp = 0;
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 
@@ -76,7 +77,6 @@ GETCHAR_PROTOTYPE
 static void CLK_Config(void)
 {
     /* Initialization of the clock */
-    /* Clock divider to HSI/1 */
     CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);
 }
 
@@ -122,8 +122,19 @@ void main( void )
 
   UART_Config();  
 
-  printf("%s", "\n\r uart_interrupt test \n\r");
+  printf("%s", "\n\r i2c test \n\r");
   
+  I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
+  
+  if ( iTmp == 0x68 )
+  {
+	putchar('+');
+  }
+  else
+  {
+	putchar('-');
+  }
+	
   while (1)
   {
     ;

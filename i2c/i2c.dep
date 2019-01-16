@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>3361889849</fileChecksum>
+  <fileChecksum>4255359820</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -59,6 +59,7 @@
       <file>$PROJ_DIR$\Debug\Obj\i2c_acc.o</file>
       <file>$PROJ_DIR$\Debug\Obj\stm8s_i2c.pbi</file>
       <file>$PROJ_DIR$\i2c_acc.h</file>
+      <file>$PROJ_DIR$\..\docs\Project\STM8S_StdPeriph_Examples\I2C\I2C_EEPROM\main.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -185,13 +186,26 @@
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 52 34 44 45 0 1 6 5 2 4 3 7 8 9 10 11 12 13 33 19 36 25</file>
+          <file> 52 34 44 45 0 1 6 5 2 4 3 7 8 9 10 11 12 13 33 19 36 25 31 35 27 32 39 42 41 37 40 38</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 52 34 44 45 0 1 6 5 2 4 3 7 8 9 10 11 12 13 33 19 36 25</file>
+          <file> 52 34 44 45 0 1 6 5 2 4 3 7 8 9 10 11 12 13 33 19 36 25 31 35 27 32 39 42 41 37 40 38</file>
         </tool>
       </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\docs\Project\STM8S_StdPeriph_Examples\I2C\I2C_EEPROM\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
     </file>
   </configuration>
   <configuration>
