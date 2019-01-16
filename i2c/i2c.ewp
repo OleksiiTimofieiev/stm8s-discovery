@@ -1570,10 +1570,19 @@
     </settings>
   </configuration>
   <file>
+    <name>$PROJ_DIR$\i2c_acc.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\i2c_acc.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_clk.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_i2c.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\STM8S_StdPeriph_Driver\src\stm8s_uart2.c</name>

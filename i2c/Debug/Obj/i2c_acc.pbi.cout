@@ -1,4 +1,4 @@
-"C:\STM8S_Discovery\stm8s-discovery\i2c\main.c"
+"C:\STM8S_Discovery\stm8s-discovery\i2c\i2c_acc.c"
 -std=c99
 -ferror-limit=100
 -I

@@ -1,6 +1,8 @@
 #include "stm8s.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "stm8s_i2c.h"
+#include "i2c_acc.h"
 
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
@@ -25,7 +27,7 @@ int   i = 0; /* may be used like extern variable */
 
     //if (GetVar_RxCounter2() == GetVar_NbrOfDataToRead2())
     //{
-        /* Disable the UART2 Receive interrupt */
+    /* Disable the UART2 Receive interrupt */
         
     if (i <= 5)
     {
@@ -112,10 +114,12 @@ static void UART_Config(void)
 
 void main( void )
 {
-  /* CLK configuration -----------------------------------------*/
   CLK_Config();
 
-  /* UART configuration -----------------------------------------*/
+  I2C_DeInit();
+  
+  I2C_ACC_Init();
+
   UART_Config();  
 
   printf("%s", "\n\r uart_interrupt test \n\r");
