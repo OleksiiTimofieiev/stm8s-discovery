@@ -115,14 +115,12 @@ static void UART_Config(void)
 void main( void )
 {
   CLK_Config();
-
-  I2C_DeInit();
   
   I2C_ACC_Init();
 
   UART_Config();  
 
-  printf("%s", "\n\r i2c test \n\r");
+  printf("%s", "\n\ri2c test\n\r");
   
   I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
   
