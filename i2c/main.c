@@ -127,6 +127,13 @@ void main( void )
   if ( iTmp == 0x68 )
   {
 	putchar('+');
+	iTmp = 0;
+	I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
+  
+	if ( iTmp == 0x68 )
+	  putchar('+');
+	else
+	  putchar('-');
   }
   else
   {

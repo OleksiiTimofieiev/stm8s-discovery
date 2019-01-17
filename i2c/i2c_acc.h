@@ -3,7 +3,7 @@
 
 #include "stm8s.h"
 
-#define I2C_Speed 			100000
+#define I2C_Speed 			200000
 
 #define MPU_6050_SLAVE_ADDRESS		0x68
 #define MPU_6050_WHO_AM_I			0x75
