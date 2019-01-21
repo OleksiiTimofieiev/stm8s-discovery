@@ -15,8 +15,8 @@ void	I2C_ACC_Init(void)
 	Input_Clock = CLK_GetClockFreq() / 1 000 000;
 	
 	printf("%d\n", Input_Clock); */
-  
-    I2C_DeInit();
+	  
+	I2C_DeInit();
 	
 	I2C_Init(I2C_Speed /* 100 000 */, MPU_6050_SLAVE_ADDRESS /* 0x68 */,
 			 I2C_DUTYCYCLE_2, I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16 /* InputClockFrequencyMHz */);

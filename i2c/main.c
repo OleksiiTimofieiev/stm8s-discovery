@@ -119,7 +119,7 @@ void main( void )
   I2C_ACC_Init();
 
   UART_Config();  
-
+  
   printf("%s", "\n\ri2c test\n\r");
   
   I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
