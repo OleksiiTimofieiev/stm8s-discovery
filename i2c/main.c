@@ -3,6 +3,7 @@
 #include "stdlib.h"
 #include "stm8s_i2c.h"
 #include "i2c_acc.h"
+#include "lsm6ds3.h"
 
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
@@ -125,13 +126,13 @@ void main( void )
   
   I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
   
-  if ( iTmp == 0x69 )
+  if ( iTmp == LSM6DS3_DEVICE_ID )
   {
 	putchar('+');
 	iTmp = 0;
 	I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
   
-	if ( iTmp == 0x69 )
+	if ( iTmp == LSM6DS3_DEVICE_ID )
 	  putchar('+');
 	else
 	  putchar('-');

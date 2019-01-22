@@ -1576,6 +1576,9 @@
     <name>$PROJ_DIR$\i2c_acc.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\lsm6ds3.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
