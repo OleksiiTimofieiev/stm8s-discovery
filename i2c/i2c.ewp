@@ -1570,6 +1570,12 @@
     </settings>
   </configuration>
   <file>
+    <name>$PROJ_DIR$\driver_funcs.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\driver_funcs.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\i2c_acc.c</name>
   </file>
   <file>

@@ -1,16 +1,14 @@
 #include "stm8s.h"
 #include "stdio.h"
 #include "stdlib.h"
-#include "stm8s_i2c.h"
 #include "i2c_acc.h"
-#include "lsm6ds3.h"
+#include "driver_funcs.h"
 
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
 
 char string[6] = { 0x0 }; /* may be used like extern variable */
 int   i = 0; /* may be used like extern variable */
-u8		iTmp = 0;
 
 #if defined(STM8S105) || defined(STM8S005) ||  defined (STM8AF626x)
 
@@ -117,30 +115,10 @@ static void UART_Config(void)
 void main( void )
 {
   CLK_Config();
-  
   I2C_ACC_Init();
-
   UART_Config();  
   
-  printf("%s", "\n\ri2c test\n\r");
-  
-  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
-  
-  if ( iTmp == LSM6DS3_DEVICE_ID )
-  {
-	putchar('+');
-	iTmp = 0;
-	I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
-  
-	if ( iTmp == LSM6DS3_DEVICE_ID )
-	  putchar('+');
-	else
-	  putchar('-');
-  }
-  else
-  {
-	putchar('-');
-  }
+  availability();
 	
   while (1)
   {

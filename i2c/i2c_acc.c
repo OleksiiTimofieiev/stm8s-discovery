@@ -7,14 +7,8 @@ void	delay(double time)
  	while (time--);
 }
   
-
 void	I2C_ACC_Init(void)
 {
-	/* u8	Input_Clock = 0x0;
-	
-	Input_Clock = CLK_GetClockFreq() / 1 000 000;
-	
-	printf("%d\n", Input_Clock); */
 	  I2C_Cmd(ENABLE);
 	I2C_DeInit();
 	
@@ -47,9 +41,6 @@ void	I2C_ACC_ByteWrite(u8 I2C_Slave_Address, u8 iData)
 
 void	I2C_ACC_ByteRead(u8 I2C_Slave_Address, u8 ReadAddr, u8 *pBuffer)
 {
-  	printf("slave -> 0x%x\n", I2C_Slave_Address);
-	printf("register address -> 0x%x\n", ReadAddr);
-	
   	/* while the bus is busy */
   	while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
 	
@@ -92,8 +83,8 @@ void	I2C_ACC_ByteRead(u8 I2C_Slave_Address, u8 ReadAddr, u8 *pBuffer)
 	
 	/* send stop condition */
   	I2C_GenerateSTOP(ENABLE);
-	
 }
+
 /*
 uint8_t MPU6050ReadReg(uint8_t regaddr)
 {

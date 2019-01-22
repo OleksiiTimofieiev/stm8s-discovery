@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>1115884505</fileChecksum>
+  <fileChecksum>574587575</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -60,9 +60,13 @@
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_rst.h</file>
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_exti.h</file>
       <file>$PROJ_DIR$\Debug\Obj\stm8s_i2c.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\driver_funcs.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\driver_funcs.o</file>
       <file>$PROJ_DIR$\LSM6.h</file>
+      <file>$PROJ_DIR$\driver_funcs.h</file>
       <file>$PROJ_DIR$\lsm6ds3.c</file>
       <file>$PROJ_DIR$\lsm6ds3.h</file>
+      <file>$PROJ_DIR$\driver_funcs.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -111,11 +115,11 @@
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 24 42 34 44 43 27 52 49 30 26 48 50 51 32 6 7 8 10 15 38 13 47 25 45 19 23 18 35 41 16 17 36 2 56</file>
+          <file> 24 42 34 44 43 27 52 49 30 26 48 50 51 32 6 7 8 10 15 38 13 47 25 45 19 23 18 35 41 16 17 36 2 57 59</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 24 42 34 44 43 27 52 49 30 26 48 50 51 32 6 7 8 10 15 38 13 47 25 45 19 23 18 35 41 16 17 36 2 56</file>
+          <file> 24 42 34 44 43 27 52 49 30 26 48 50 51 32 6 7 8 10 15 38 13 47 25 45 19 23 18 35 41 16 17 36 2 57 59</file>
         </tool>
       </inputs>
     </file>
@@ -193,7 +197,7 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 12 28 14 29 53 37 9 46</file>
+          <file> 12 55 28 14 29 53 37 9 46</file>
         </tool>
       </inputs>
     </file>
@@ -209,6 +213,29 @@
           <file> 20</file>
         </tool>
       </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\driver_funcs.c</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 57 59 26 24 42 34 44 43 27 52 49 30 48 50 51 32 6 7 8 10 15 38 13 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57 59 26 24 42 34 44 43 27 52 49 30 48 50 51 32 6 7 8 10 15 38 13 2</file>
+        </tool>
+      </inputs>
     </file>
   </configuration>
   <configuration>
