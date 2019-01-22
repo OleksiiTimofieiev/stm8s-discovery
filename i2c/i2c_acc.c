@@ -15,13 +15,13 @@ void	I2C_ACC_Init(void)
 	Input_Clock = CLK_GetClockFreq() / 1 000 000;
 	
 	printf("%d\n", Input_Clock); */
-	  
+	  I2C_Cmd(ENABLE);
 	I2C_DeInit();
 	
-	I2C_Init(I2C_Speed /* 100 000 */, MPU_6050_SLAVE_ADDRESS /* 0x68 */,
+	I2C_Init(I2C_Speed, LSM6DS3_BUS_ADDRESS,
 			 I2C_DUTYCYCLE_2, I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16 /* InputClockFrequencyMHz */);
+
 	
-	I2C_Cmd(ENABLE);
 }
 
 void	I2C_ACC_ByteWrite(u8 I2C_Slave_Address, u8 iData)
@@ -33,7 +33,7 @@ void	I2C_ACC_ByteWrite(u8 I2C_Slave_Address, u8 iData)
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
 	
 	/* send EEPROM address to write */
-	I2C_Send7bitAddress(I2C_Slave_Address, I2C_DIRECTION_TX);
+	I2C_Send7bitAddress(I2C_Slave_Address<<1, I2C_DIRECTION_TX);
 	
 	/* test on EV6 and clear it */
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
@@ -62,12 +62,13 @@ void	I2C_ACC_ByteRead(u8 I2C_Slave_Address, u8 ReadAddr, u8 *pBuffer)
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
 	
 	/* send address to write */
-	I2C_Send7bitAddress(I2C_Slave_Address << 1, I2C_DIRECTION_TX);
+	I2C_Send7bitAddress(I2C_Slave_Address, I2C_DIRECTION_TX);
 	
 	/* test on EV6 and clear it */
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
 	
 	/* send the address of the first byte to be read and wait event detection */
+
 	I2C_SendData(ReadAddr); /* LSB */
 	
 	/* test on EV8 and clear it */
@@ -80,7 +81,7 @@ void	I2C_ACC_ByteRead(u8 I2C_Slave_Address, u8 ReadAddr, u8 *pBuffer)
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
 	
 	/* send EEPROM address to write */
-	I2C_Send7bitAddress(I2C_Slave_Address << 1, I2C_DIRECTION_RX);
+	I2C_Send7bitAddress(I2C_Slave_Address, I2C_DIRECTION_RX);
 	
 	/* test on EV and clear it */
 	while(!I2C_CheckEvent(I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));

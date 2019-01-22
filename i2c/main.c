@@ -78,6 +78,7 @@ static void CLK_Config(void)
 {
     /* Initialization of the clock */
     CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);
+	//CLK_HSECmd(1);
 }
 
 static void UART_Config(void)
@@ -122,15 +123,15 @@ void main( void )
   
   printf("%s", "\n\ri2c test\n\r");
   
-  I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
   
-  if ( iTmp == 0x68 )
+  if ( iTmp == 0x69 )
   {
 	putchar('+');
 	iTmp = 0;
-	I2C_ACC_ByteRead(MPU_6050_SLAVE_ADDRESS, MPU_6050_WHO_AM_I, &iTmp);
+	I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, WHO_AM_I, &iTmp);
   
-	if ( iTmp == 0x68 )
+	if ( iTmp == 0x69 )
 	  putchar('+');
 	else
 	  putchar('-');
