@@ -10,5 +10,6 @@
 void	I2C_ACC_Init(void);
 void	I2C_ACC_ByteWrite(u8 I2C_Slave_Address, u8 iData);
 void	I2C_ACC_ByteRead(u8 I2C_Slave_Address, u8 ReadAddr, u8 *pBuffer);
+void	I2C_ACC_RegWrite(u8 I2C_Slave_Address, u8 RegAddr, u8 data_for_register);
 
 #endif

@@ -119,6 +119,14 @@ void main( void )
   UART_Config();  
   
   availability();
+  
+  printf("asdfasdf\n");
+  
+  u8 x = 0;
+  
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, 0x18, &x);
+  
+  printf("%d\n", x);
 	
   while (1)
   {

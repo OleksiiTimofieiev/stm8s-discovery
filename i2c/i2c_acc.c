@@ -115,3 +115,34 @@ I2C_GenerateSTOP(ENABLE); // Send STOP Condition
 return tmp;
 }
 */
+
+void	I2C_ACC_RegWrite(u8 I2C_Slave_Address, u8 RegAddr, u8 data_for_register)
+{
+  /* while the bus is busy */
+  	while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
+	
+	/* send start condition */
+  	I2C_GenerateSTART(ENABLE);
+	
+	/* test in I2C event and clear it */
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_MODE_SELECT));
+	
+	/* send address to write */
+	I2C_Send7bitAddress(I2C_Slave_Address, I2C_DIRECTION_TX);
+	
+	/* test on EV6 and clear it */
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
+	
+	/* send the address of the first byte to be read and wait event detection */
+	I2C_SendData(RegAddr); /* LSB */
+	
+	/* test on EV8 and clear it */
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED));
+
+	I2C_SendData(data_for_register); /* LSB */
+	
+		/* test on EV8 and clear it */
+	while(!I2C_CheckEvent(I2C_EVENT_MASTER_BYTE_TRANSMITTED));
+	
+  	I2C_GenerateSTOP(ENABLE);
+}
