@@ -120,14 +120,12 @@ void main( void )
   
   availability();
   
-  printf("asdfasdf\n");
-  
   u8 x = 0;
   
   I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, 0x18, &x);
+
+  printf("reg value -> %d\n", x);
   
-  printf("%d\n", x);
-	
   while (1)
   {
     ;
