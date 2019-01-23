@@ -72,3 +72,37 @@ void	init_accelerometer(void)
   value |= LSM6DS3_ACC_GYRO_ODR_XL_104Hz;
   I2C_ACC_RegWrite(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_CTRL1_XL, value);
 }
+
+void	Accel_GetXYZ(int16_t *pData)
+{
+  uint8_t buffer[6];
+  
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTX_L_XL, &buffer[0]);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTX_H_XL, &buffer[1]);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTY_L_XL, &buffer[2]);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTY_H_XL, &buffer[3]);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTZ_L_XL, &buffer[4]);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_OUTZ_H_XL, &buffer[5]);
+
+  for (uint8_t i = 0; i < 3; i++)
+  {
+	pData[i] = ((int16_t)((uint16_t)buffer[2 * i + 1] << 8) + buffer[2 * i]);
+  }
+  
+}
+
+void	Accel_Read(void)
+{
+  int16_t buffer[3] = {0};
+  int16_t xval, yval, zval;
+  char	str[100] = {'\0'};
+  
+  Accel_GetXYZ(buffer);
+  
+  xval = buffer[0];
+  yval = buffer[1];
+  zval = buffer[2];
+  
+  sprintf(str, "X:%06d Y:%06d Z:%06d\r\n", xval, yval, zval);
+  printf("%s\r\n", str);
+}

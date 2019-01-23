@@ -34,5 +34,13 @@
 #define        LSM6DS3_ACC_GYRO_YEN_XL_ENABLED        0x10
 #define        LSM6DS3_ACC_GYRO_ZEN_XL_ENABLED        0x20
 
+/* output x,y,z data registers */
+#define LSM6DS3_ACC_GYRO_OUTX_L_XL          0X28
+#define LSM6DS3_ACC_GYRO_OUTX_H_XL          0X29
+#define LSM6DS3_ACC_GYRO_OUTY_L_XL          0X2A
+#define LSM6DS3_ACC_GYRO_OUTY_H_XL          0X2B
+#define LSM6DS3_ACC_GYRO_OUTZ_L_XL          0X2C
+#define LSM6DS3_ACC_GYRO_OUTZ_H_XL          0X2D
+
 
 #endif

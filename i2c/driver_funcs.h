@@ -8,5 +8,6 @@
 
 u8		availability(void);
 void	init_accelerometer(void);
+void	Accel_Read(void);
 
 #endif

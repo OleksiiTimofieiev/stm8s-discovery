@@ -119,12 +119,17 @@ void main( void )
   UART_Config();  
   
   if (availability())
-  	init_accelerometer();
-  
-  while (1)
   {
-    ;
+  	init_accelerometer();
+	
+	while (1)
+  {
+    Accel_Read();
   }
+	
+  }
+  
+
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
