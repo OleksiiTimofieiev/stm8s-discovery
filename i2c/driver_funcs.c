@@ -1,5 +1,10 @@
 #include "driver_funcs.h"
 
+void	delay(double time)
+{
+ 	while (time--);
+}
+
 u8	availability(void)
 {
 	u8		iTmp = 0;

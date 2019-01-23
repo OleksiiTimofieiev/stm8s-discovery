@@ -1,11 +1,6 @@
 #include "i2c_acc.h"
 #include "stm8s_i2c.h"
 #include "stdio.h"
-
-void	delay(double time)
-{
- 	while (time--);
-}
   
 void	I2C_ACC_Init(void)
 {
