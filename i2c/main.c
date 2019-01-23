@@ -117,14 +117,9 @@ void main( void )
   CLK_Config();
   I2C_ACC_Init();
   UART_Config();  
-  
   availability();
   
-  u8 x = 0;
-  
-  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, 0x12, &x);
-
-  printf("reg value -> %d\n", x);
+  init_accelerometer();
   
   while (1)
   {

@@ -9,9 +9,8 @@ void	delay(double time)
   
 void	I2C_ACC_Init(void)
 {
-	  I2C_Cmd(ENABLE);
+	I2C_Cmd(ENABLE);
 	I2C_DeInit();
-	
 	I2C_Init(I2C_Speed, LSM6DS3_BUS_ADDRESS,
 			 I2C_DUTYCYCLE_2, I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16 /* InputClockFrequencyMHz */);
 }
