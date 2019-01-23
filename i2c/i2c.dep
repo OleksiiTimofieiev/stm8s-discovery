@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>3593988653</fileChecksum>
+  <fileChecksum>574587575</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -262,6 +262,10 @@
         </tool>
       </inputs>
     </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>
