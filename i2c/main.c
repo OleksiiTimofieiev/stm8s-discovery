@@ -122,7 +122,7 @@ void main( void )
   
   u8 x = 0;
   
-  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, 0x18, &x);
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, 0x12, &x);
 
   printf("reg value -> %d\n", x);
   
