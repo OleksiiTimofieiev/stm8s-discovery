@@ -19,6 +19,7 @@
 #define LSM6DS3_ACC_GYRO_CTRL1_XL          0X10
 #define LSM6DS3_ACC_GYRO_ODR_XL_POWER_DOWN        0x00
 #define LSM6DS3_ACC_GYRO_ODR_XL_MASK        0xF0
+#define LSM6DS3_ACC_GYRO_ODR_XL_104Hz        0x40
 
 /* g scale selection */
 #define LSM6DS3_ACC_GYRO_FS_XL_MASK        0x0C

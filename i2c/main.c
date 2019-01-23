@@ -117,9 +117,9 @@ void main( void )
   CLK_Config();
   I2C_ACC_Init();
   UART_Config();  
-  availability();
   
-  init_accelerometer();
+  if (availability())
+  	init_accelerometer();
   
   while (1)
   {

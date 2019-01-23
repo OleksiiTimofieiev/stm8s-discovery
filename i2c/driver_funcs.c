@@ -39,7 +39,7 @@ void	init_accelerometer(void)
   value |= LSM6DS3_ACC_GYRO_FIFO_MODE_BYPASS;
   I2C_ACC_RegWrite(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_FIFO_CTRL5, value);
   
-  /* turn off device */
+  /* turn off device == 0000 */
   I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_CTRL1_XL, &value);
   value &=~LSM6DS3_ACC_GYRO_ODR_XL_MASK;
   value |= LSM6DS3_ACC_GYRO_ODR_XL_POWER_DOWN;
@@ -61,4 +61,9 @@ void	init_accelerometer(void)
 				LSM6DS3_ACC_GYRO_ZEN_XL_ENABLED	);
   I2C_ACC_RegWrite(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_CTRL9_XL, value);
   
+   /* turn on device */
+  I2C_ACC_ByteRead(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_CTRL1_XL, &value);
+  value &=~LSM6DS3_ACC_GYRO_ODR_XL_MASK;
+  value |= LSM6DS3_ACC_GYRO_ODR_XL_104Hz;
+  I2C_ACC_RegWrite(LSM6DS3_BUS_ADDRESS, LSM6DS3_ACC_GYRO_CTRL1_XL, value);
 }
