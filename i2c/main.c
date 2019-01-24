@@ -12,11 +12,19 @@ int   i = 0; /* may be used like extern variable */
 #define TIM4_PERIOD       124
 
 int timer_stop_event = 0;
+int millisecond = 0;
 
 INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
 {
-  printf("We have a timer\n");
-  timer_stop_event++;
+  millisecond++;
+  
+  if (millisecond == 1000)
+  {
+  	printf("We have a timer\n");
+	millisecond = 0;
+	timer_stop_event++;
+  }
+  
   /* Cleat Interrupt Pending bit */
   TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
   
