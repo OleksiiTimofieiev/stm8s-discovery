@@ -7,6 +7,24 @@
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
 
+
+INTERRUPT_HANDLER(I2C_IRQHandler, 19)
+{
+  switch (I2C_GetLastEvent())
+  {
+      /* EV5 */
+    case I2C_EVENT_MASTER_MODE_SELECT :
+
+
+	  printf("test\r\n");
+
+      break;
+
+    default:
+      break;
+  }
+}
+
 char string[6] = { 0x0 }; /* may be used like extern variable */
 int   i = 0; /* may be used like extern variable */
 #define TIM4_PERIOD       124
@@ -167,6 +185,13 @@ void main( void )
 {
   CLK_Config();
   I2C_ACC_Init();
+  
+    	/* while the bus is busy */
+  	while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
+	
+	/* send start condition */
+  	I2C_GenerateSTART(ENABLE);
+  
   UART_Config();  
   TIM4_Config();
   
@@ -175,13 +200,10 @@ void main( void )
   	init_accelerometer();
 	
 	while (1)
-  {
-    Accel_Read();
+  	{
+   		 Accel_Read();
+ 	}
   }
-	
-  }
-  
-
 }
 
 void assert_failed(uint8_t* file, uint32_t line)

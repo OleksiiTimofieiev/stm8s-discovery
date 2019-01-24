@@ -8,6 +8,9 @@ void	I2C_ACC_Init(void)
 	I2C_DeInit();
 	I2C_Init(I2C_Speed, LSM6DS3_BUS_ADDRESS,
 			 I2C_DUTYCYCLE_2, I2C_ACK_CURR, I2C_ADDMODE_7BIT, 16 /* InputClockFrequencyMHz */);
+	
+  /* Enable Buffer and Event Interrupt*/
+  I2C_ITConfig((I2C_IT_TypeDef)(I2C_IT_EVT | I2C_IT_BUF) , ENABLE);
 }
 
 void	I2C_ACC_ByteWrite(u8 I2C_Slave_Address, u8 iData)
