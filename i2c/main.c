@@ -11,11 +11,20 @@ char string[6] = { 0x0 }; /* may be used like extern variable */
 int   i = 0; /* may be used like extern variable */
 #define TIM4_PERIOD       124
 
+int timer_stop_event = 0;
+
 INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
 {
-   printf("We have a timer\n");
+  printf("We have a timer\n");
+  timer_stop_event++;
   /* Cleat Interrupt Pending bit */
   TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
+  
+  if (timer_stop_event == 50)
+  {
+	printf("STOP\n");
+	TIM4_Cmd(DISABLE);
+  }
 
 }
 
