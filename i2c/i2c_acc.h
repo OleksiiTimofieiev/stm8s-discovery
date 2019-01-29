@@ -3,7 +3,7 @@
 
 #include "stm8s.h"
 
-#define I2C_Speed 			10000
+#define I2C_Speed 					10000
 #define LSM6DS3_BUS_ADDRESS			0xD4
 #define WHO_AM_I					0x0F
 

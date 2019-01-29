@@ -7,23 +7,20 @@
 #define PUTCHAR_PROTOTYPE int putchar (int c)
 #define GETCHAR_PROTOTYPE int getchar (void)
 
-
+/*
 INTERRUPT_HANDLER(I2C_IRQHandler, 19)
 {
   switch (I2C_GetLastEvent())
   {
-      /* EV5 */
+      // EV5 /
     case I2C_EVENT_MASTER_MODE_SELECT :
-
-
 	  printf("test\r\n");
-
       break;
-
     default:
       break;
   }
 }
+*/
 
 char string[6] = { 0x0 }; /* may be used like extern variable */
 int   i = 0; /* may be used like extern variable */
@@ -61,6 +58,14 @@ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
     /* In order to detect unexpected events during development,
        it is recommended to set a breakpoint on the following instruction.
     */
+  	/* Write one byte to the transmit data register */
+  UART2_SendData8('x');
+
+  //if (TxCounter == TX_BUFFER_SIZE)
+  //{
+    /* Disable the USART Transmit Complete interrupt */
+    UART2_ITConfig(UART2_IT_TXE, DISABLE);
+  //}
 }
 
 
@@ -81,6 +86,8 @@ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
     }
     else
     {
+	  UART2_ITConfig(UART2_IT_TXE, ENABLE);
+	  UART2_SendData8('x');
       printf("%s\n", "interrupt stopper");
       UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
       printf("%s\n", string);
@@ -126,6 +133,10 @@ static void CLK_Config(void)
 
 static void UART_Config(void)
 {
+
+  // https://en.wikipedia.org/wiki/Baud
+  // stop bit and start bit -> 960 bytes per second;
+  
   /* Deinitializes the UART1 and UART3 peripheral */
     UART2_DeInit();
     //UART3_DeInit();
@@ -143,7 +154,7 @@ static void UART_Config(void)
                // UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
     
     /* Enable UART1 Transmit interrupt*/
-    //UART1_ITConfig(UART1_IT_TXE, ENABLE);
+    
     
     /* Configure the UART3 */
  		UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
@@ -151,7 +162,10 @@ static void UART_Config(void)
 
     /* Enable UART3 Receive interrupt */
     UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
+	UART2_ITConfig(UART2_IT_TXE, ENABLE);
     
+	UART2_Cmd(ENABLE);
+	
     /* Enable general interrupts */
     enableInterrupts();    
 }
@@ -183,27 +197,28 @@ static void TIM4_Config(void)
 
 void main( void )
 {
+  i = 0;
   CLK_Config();
-  I2C_ACC_Init();
+  //I2C_ACC_Init();
   
-    	/* while the bus is busy */
-  	while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
+   // 	/* while the bus is busy */
+  	//while(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY));
 	
-	/* send start condition */
-  	I2C_GenerateSTART(ENABLE);
+	///* send start condition */
+  	//I2C_GenerateSTART(ENABLE);
   
   UART_Config();  
-  TIM4_Config();
+  // TIM4_Config();
   
-  if (availability())
-  {
-  	init_accelerometer();
+  // if (availability())
+  //{
+  	//init_accelerometer();
 	
 	while (1)
   	{
-   		 Accel_Read();
+   		 ;
  	}
-  }
+  //}
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
