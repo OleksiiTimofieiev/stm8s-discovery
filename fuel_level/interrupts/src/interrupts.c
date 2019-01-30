@@ -3,7 +3,8 @@
 extern int i;
 extern uint8_t data[10];
 
-#include "stdio.h"
+//#include "stdio.h"
+
 //
 //INTERRUPT_HANDLER(UART2_TX_IRQHandler, 20)
 //{
