@@ -157,7 +157,7 @@ static void UART_Config(void)
     
     
     /* Configure the UART3 */
- 		UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
+ 	UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
                 UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
 
     /* Enable UART3 Receive interrupt */
@@ -207,7 +207,11 @@ void main( void )
 	///* send start condition */
   	//I2C_GenerateSTART(ENABLE);
   
+  
+  
   UART_Config();  
+  
+  putchar('z');
   // TIM4_Config();
   
   // if (availability())
