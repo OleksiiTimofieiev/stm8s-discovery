@@ -25,7 +25,7 @@
       <TerminalIO/>
     </Static>
     <Windows>
-      <Wnd2>
+      <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-5113-3249</Identity>
@@ -40,8 +40,8 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
-      <Wnd3>
+      </Wnd0>
+      <Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-931-3327</Identity>
@@ -51,7 +51,7 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd3>
+      </Wnd1>
     </Windows>
     <Editor>
       <Pane>
@@ -76,8 +76,8 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>166</SelStart2>
-          <SelEnd2>166</SelEnd2>
+          <SelStart2>87</SelStart2>
+          <SelEnd2>87</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -87,9 +87,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>17</YPos2>
-          <SelStart2>656</SelStart2>
-          <SelEnd2>656</SelEnd2>
+          <YPos2>11</YPos2>
+          <SelStart2>797</SelStart2>
+          <SelEnd2>797</SelEnd2>
         </Tab>
         <ActiveTab>2</ActiveTab>
         <Tab>
@@ -145,7 +145,7 @@
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd0>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -160,7 +160,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>705379</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd0>
           </Sizes>
         </Row0>
       </Left>
@@ -172,7 +172,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd3>
+            <Wnd1>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -187,7 +187,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>244499</sizeVertCY>
               </Rect>
-            </Wnd3>
+            </Wnd1>
           </Sizes>
         </Row0>
       </Bottom>

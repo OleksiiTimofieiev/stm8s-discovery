@@ -34,7 +34,10 @@ extern uint8_t data[10];
 		i = 0;
 		
 		while (i < 10)
+		{
+		 // printf("%c", (char)data[i++]);
 		  putchar_UART(data[i++]);
+		}
 		i = 0;
 	  }
 	  
