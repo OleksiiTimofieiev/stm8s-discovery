@@ -25,17 +25,13 @@ extern uint8_t data[10];
  INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 {
 	  if (i < 10)
-	  {
-		data[i] = getchar();
-		
-		i++;
-	  }
+		data[i++] = getchar();
 	  else {
 		i = 0;
 		
 		while (i < 10)
 		{
-		 // printf("%c", (char)data[i++]);
+		 // printf("%c", (char)data[i++]); /* not working */
 		  putchar_UART(data[i++]);
 		}
 		i = 0;
