@@ -40,7 +40,7 @@ void UART2_Config(void)
 
     /* Enable UART3 Receive interrupt */
     UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
-	UART2_ITConfig(UART2_IT_TXE, ENABLE);
+	//UART2_ITConfig(UART2_IT_TXE, ENABLE);
     
 	UART2_Cmd(ENABLE);
 	

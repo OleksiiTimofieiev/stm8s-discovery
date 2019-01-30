@@ -36,7 +36,7 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [DebugChecksum]
-Checksum=1838198585
+Checksum=-1160675014
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -47,11 +47,7 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\interrupts\src\interrupts.c}.10.3" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\interrupts\src\interrupts.c}.21.15" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\interrupts\src\interrupts.c}.27.4" 1 0 0 0 "" 0 ""
-Bp3=_ "STD_CODE" "{$PROJ_DIR$\interrupts\src\interrupts.c}.26.4" 1 0 0 0 "" 0 ""
-Count=4
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

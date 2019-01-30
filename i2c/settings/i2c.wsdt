@@ -3,11 +3,8 @@
 <Workspace>
   <ConfigDictionary>
     <CurrentConfigs>
-      <Project>i2c/Debug</Project>
       <Project>fuel_level/Debug</Project>
     </CurrentConfigs>
-    <CurrentProj>fuel_level</CurrentProj>
-    <OverviewSelected>0</OverviewSelected>
   </ConfigDictionary>
   <Desktop>
     <Static>
@@ -28,7 +25,7 @@
       <TerminalIO/>
     </Static>
     <Windows>
-      <Wnd0>
+      <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-5113-3249</Identity>
@@ -37,14 +34,14 @@
             <Session>
               <NodeDict>
                 <ExpandedNode>fuel_level</ExpandedNode>
-                <ExpandedNode>i2c</ExpandedNode>
+                <ExpandedNode>fuel_level/output.c</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd0>
-      <Wnd1>
+      </Wnd2>
+      <Wnd3>
         <Tabs>
           <Tab>
             <Identity>TabID-931-3327</Identity>
@@ -54,7 +51,7 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd1>
+      </Wnd3>
     </Windows>
     <Editor>
       <Pane>
@@ -67,8 +64,8 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>4</YPos2>
-          <SelStart2>1486</SelStart2>
-          <SelEnd2>1486</SelEnd2>
+          <SelStart2>1488</SelStart2>
+          <SelEnd2>1488</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -79,8 +76,8 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>153</SelStart2>
-          <SelEnd2>153</SelEnd2>
+          <SelStart2>166</SelStart2>
+          <SelEnd2>166</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -90,9 +87,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>317</SelStart2>
-          <SelEnd2>317</SelEnd2>
+          <YPos2>17</YPos2>
+          <SelStart2>656</SelStart2>
+          <SelEnd2>656</SelEnd2>
         </Tab>
         <ActiveTab>2</ActiveTab>
         <Tab>
@@ -104,56 +101,20 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>89</SelStart2>
-          <SelEnd2>89</SelEnd2>
+          <SelStart2>91</SelStart2>
+          <SelEnd2>91</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\driver_funcs.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>76</YPos2>
-          <SelStart2>0</SelStart2>
-          <SelEnd2>0</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\driver_funcs.h</Filename>
+          <Filename>$WS_DIR$\..\fuel_level\output\src\output.c</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>0</SelStart2>
-          <SelEnd2>0</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\i2c_acc.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>0</SelStart2>
-          <SelEnd2>0</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\i2c_acc.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>44</SelStart2>
-          <SelEnd2>62</SelEnd2>
+          <SelStart2>28</SelStart2>
+          <SelEnd2>40</SelEnd2>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
@@ -184,7 +145,7 @@
       <Left>
         <Row0>
           <Sizes>
-            <Wnd0>
+            <Wnd2>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -199,7 +160,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>705379</sizeVertCY>
               </Rect>
-            </Wnd0>
+            </Wnd2>
           </Sizes>
         </Row0>
       </Left>
@@ -211,7 +172,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd1>
+            <Wnd3>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -226,7 +187,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>244499</sizeVertCY>
               </Rect>
-            </Wnd1>
+            </Wnd3>
           </Sizes>
         </Row0>
       </Bottom>

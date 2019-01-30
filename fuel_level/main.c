@@ -3,8 +3,13 @@
 #include "output.h"
 #include "interrupts.h"
 
+uint8_t data[10] = { 0x0 };
+int	i;
+
 void main( void )
 {
+  
+  i = 0;
   CLK_Config();
   UART2_Config();
   

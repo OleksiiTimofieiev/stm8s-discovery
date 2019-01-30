@@ -3,7 +3,7 @@
 
 #include "stm8s_uart2.h"
 
-void putchar (int c);
+void putchar_UART (int c);
 int getchar (void);
 
 #endif

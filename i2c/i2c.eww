@@ -4,9 +4,6 @@
   <project>
     <path>$WS_DIR$\..\fuel_level\fuel_level.ewp</path>
   </project>
-  <project>
-    <path>$WS_DIR$\i2c.ewp</path>
-  </project>
   <batchBuild/>
 </workspace>
 

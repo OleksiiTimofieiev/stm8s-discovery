@@ -1,6 +1,6 @@
 #include "output.h"
 
-void putchar (int c)
+void putchar_UART (int c)
 {
   /* Write a character to the UART2 */
   UART2_SendData8(c);
