@@ -7,13 +7,15 @@
 
 uint8_t data[10] = { 0x0 };
 int	i;
+int timer_stop_event = 0;
+int milliseconds = 0;
 
 void main( void )
 {
- // printf("%s\n", "fuel_stuff");
   i = 0;
   CLK_Config();
   UART2_Config();
+  TIM4_Config_Fuel();
   
   while (1)
   {

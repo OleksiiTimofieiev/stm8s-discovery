@@ -8,42 +8,47 @@ void CLK_Config(void)
 
 void UART2_Config(void)
 {
-
-  // https://en.wikipedia.org/wiki/Baud
-  // stop bit and start bit -> 960 bytes per second;
+  	// stop bit and start bit -> 960 bytes per second with 9600 baud;
+  	// https://en.wikipedia.org/wiki/Baud
+  	// stop bit and start bit -> 960 bytes per second;
   
-  	 // https://en.wikipedia.org/wiki/Baud
-  // stop bit and start bit -> 960 bytes per second;
-  
-  /* Deinitializes the UART1 and UART3 peripheral */
+  	/* Deinitializes the UART1 and UART3 peripheral */
     UART2_DeInit();
-    //UART3_DeInit();
-    /* UART1 and UART3 configuration -------------------------------------------------*/
-    /* UART1 and UART3 configured as follow:
-          - BaudRate = 9600 baud  
-          - Word Length = 8 Bits
-          - One Stop Bit
-          - No parity
-          - Receive and transmit enabled
-          - UART1 Clock disabled
-     */
-    /* Configure the UART1 */
-    //UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO,
-               // UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TXRX_ENABLE);
     
-    /* Enable UART1 Transmit interrupt*/
-    
-    
-    /* Configure the UART3 */
+    /* Configure the UART2 */
  	UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
                 UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
 
-    /* Enable UART3 Receive interrupt */
+    /* Enable UART2 Receive interrupt */
     UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
 	//UART2_ITConfig(UART2_IT_TXE, ENABLE);
     
+	/* enable UART2 peripheral */
 	UART2_Cmd(ENABLE);
 	
     /* Enable general interrupts */
     enableInterrupts();    
+}
+
+void TIM4_Config_Fuel(void)
+{
+  /* TIM4 configuration:
+   - TIM4CLK is set to 16 MHz, the TIM4 Prescaler is equal to 128 so the TIM1 counter
+   clock used is 16 MHz / 128 = 125 000 Hz
+  - With 125 000 Hz we can generate time base:
+      max time base is 2.048 ms if TIM4_PERIOD = 255 --> (255 + 1) / 125000 = 2.048 ms
+      min time base is 0.016 ms if TIM4_PERIOD = 1   --> (  1 + 1) / 125000 = 0.016 ms
+  - In this example we need to generate a time base equal to 1 ms
+   so TIM4_PERIOD = (0.001 * 125000 - 1) = 124 */
+
+  /* Time base configuration */
+  TIM4_TimeBaseInit(TIM4_PRESCALER_128, TIM4_PERIOD);
+  /* Clear TIM4 update flag */
+  TIM4_ClearFlag(TIM4_FLAG_UPDATE);
+  /* Enable update interrupt */
+  TIM4_ITConfig(TIM4_IT_UPDATE, ENABLE);
+  /* enable interrupts */
+  enableInterrupts();
+  /* Enable TIM4 */
+  TIM4_Cmd(ENABLE);
 }

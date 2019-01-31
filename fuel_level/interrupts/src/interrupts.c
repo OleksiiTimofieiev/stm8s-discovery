@@ -2,6 +2,17 @@
 
 extern int i;
 extern uint8_t data[10];
+extern int timer_stop_event;
+extern int milliseconds;
+
+void	print_UART(uint8_t *data) /* len is constantly 10 */
+{
+  int i = 0;
+  while(i < 10)
+  {
+	putchar_UART(data[i++]);
+  }
+}
 
 //#include "stdio.h"
 
@@ -27,24 +38,26 @@ extern uint8_t data[10];
 {
 	  if (i < 10)
 		data[i++] = getchar();
-	  else {
+	  else
 		i = 0;
-		
-		while (i < 10)
-		{
-		 // printf("%c", (char)data[i++]); /* not working */
-		  putchar_UART(data[i++]);
-		}
-		i = 0;
-	  }
-	  
-      //string[i] = c;
-      //i++;
-    	  
-	  //UART2_ITConfig(UART2_IT_TXE, ENABLE);
-	  //UART2_ITConfig(UART2_IT_TXE, ENABLE);
-	  
 	  // ? stop when receive is complete;
       //UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
     }
+ 
+ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
+{
+  milliseconds++;
+  
+  if (milliseconds == 10000)
+  {
+	milliseconds = 0;
+	print_UART(data);
+	memset(data, 0x0, sizeof(data));
+  }
+  
+  /* Cleat Interrupt Pending bit */
+  TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
+  
+  // ? stop of the timer;
+}
 
