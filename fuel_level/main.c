@@ -5,7 +5,7 @@
 
 #include "stdio.h"
 
-uint8_t data[10] = { 0x0 };
+uint8_t data[20] = { 0x0 };
 int	i;
 int timer_stop_event = 0;
 int milliseconds = 0;

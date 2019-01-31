@@ -42,6 +42,7 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 	  //if (i < 10)
 	  //{
 		data[i++] = getchar();
+		putchar_UART('x');
 		byte_received = TRUE;
 	  //}
 	  //else
@@ -63,6 +64,7 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 	{
 	  putchar_UART('1');
 	  byte_received = FALSE;
+	  i = 0;
 	}
 	else
 	  print_UART(data);
