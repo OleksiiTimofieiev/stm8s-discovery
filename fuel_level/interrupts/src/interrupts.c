@@ -5,6 +5,8 @@ extern uint8_t data[10];
 extern int timer_stop_event;
 extern int milliseconds;
 
+#define TIMER_PERIOD 1000 /* 1000 == 1 second */
+
 void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
   int i = 0;
@@ -41,14 +43,14 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 	  else
 		i = 0;
 	  // ? stop when receive is complete;
-      //UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
+      // UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
     }
  
  INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
 {
   milliseconds++;
   
-  if (milliseconds == 10000)
+  if (milliseconds == (TIMER_PERIOD))
   {
 	milliseconds = 0;
 	print_UART(data);
