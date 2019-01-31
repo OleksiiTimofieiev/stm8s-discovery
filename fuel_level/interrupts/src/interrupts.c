@@ -4,8 +4,9 @@ extern int i;
 extern uint8_t data[10];
 extern int timer_stop_event;
 extern int milliseconds;
+extern bool byte_received;
 
-#define TIMER_PERIOD 1000 /* 1000 == 1 second */
+#define TIMER_PERIOD 3000 /* 1000 == 1 second */
 
 void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
@@ -38,10 +39,13 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 
  INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 {
-	  if (i < 10)
+	  //if (i < 10)
+	  //{
 		data[i++] = getchar();
-	  else
-		i = 0;
+		byte_received = TRUE;
+	  //}
+	  //else
+		//i = 0;
 	  // ? stop when receive is complete;
       // UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
     }
@@ -50,11 +54,18 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
   milliseconds++;
   
-  if (milliseconds == (TIMER_PERIOD))
+  if (milliseconds == TIMER_PERIOD)
   {
 	milliseconds = 0;
-	print_UART(data);
-	memset(data, 0x0, sizeof(data));
+	// print_UART(data);
+	// memset(data, 0x0, sizeof(data));
+	if (byte_received == TRUE)
+	{
+	  putchar_UART('1');
+	  byte_received = FALSE;
+	}
+	else
+	  print_UART(data);
   }
   
   /* Cleat Interrupt Pending bit */

@@ -9,6 +9,7 @@ uint8_t data[10] = { 0x0 };
 int	i;
 int timer_stop_event = 0;
 int milliseconds = 0;
+bool byte_received = FALSE;
 
 void main( void )
 {
