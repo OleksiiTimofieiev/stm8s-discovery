@@ -6,16 +6,6 @@ extern int timer_stop_event;
 extern int milliseconds;
 extern bool byte_received;
 
-#define TIMER_PERIOD 3000 /* 1000 == 1 second */
-
-void	print_UART(uint8_t *data) /* len is constantly 10 */
-{
-  int i = 0;
-  while(i < 10)
-    putchar_UART(data[i++]);
-  putchar_UART('\n');
-}
-
 //#include "stdio.h"
 
 //

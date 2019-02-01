@@ -2,19 +2,13 @@
 #include "config.h"
 #include "output.h"
 #include "interrupts.h"
+#include "infrastructure.h" /* supporting funcs */
 
 uint8_t data_buffer[30] = { 0x0 };
 int	buffer_iterator = 0;
 int     timer_stop_event = 0;
 int     milliseconds = 0;
 bool    byte_received = FALSE;
-
-void    set_up_peripherals(void)
-{
-  CLK_Config();
-  UART2_Config();
-  TIM4_Config_Fuel();
-}
 
 void main( void )
 {

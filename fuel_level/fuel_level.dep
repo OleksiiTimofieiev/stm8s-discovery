@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>3972881903</fileChecksum>
+  <fileChecksum>2546161164</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -65,7 +65,11 @@
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s_iwdg.h</file>
       <file>$PROJ_DIR$\STM8S_StdPeriph_Driver\inc\stm8s.h</file>
       <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\infrastructure.o</file>
       <file>$TOOLKIT_DIR$\doc\infocenter\index.ENU.html</file>
+      <file>$PROJ_DIR$\infrastructure\src\infrastructure.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\infrastructure.pbi</file>
+      <file>$PROJ_DIR$\infrastructure\inc\infrastructure.h</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -114,11 +118,11 @@
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 49 41 13 43 52 24 15 48 47 58 25 19</file>
+          <file> 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 49 41 13 43 52 24 15 48 47 58 25 19 63</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 49 41 13 43 52 24 15 48 47 58 25 19</file>
+          <file> 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 49 41 13 43 52 24 15 48 47 58 25 19 63</file>
         </tool>
       </inputs>
     </file>
@@ -139,6 +143,10 @@
           <name>ICCSTM8</name>
           <file> 41 7 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 40 42</file>
         </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 7 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 40 42</file>
+        </tool>
       </inputs>
     </file>
     <file>
@@ -156,11 +164,11 @@
       <inputs>
         <tool>
           <name>ICCSTM8</name>
-          <file> 13 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 41 43 52 24 15 48 47 58 25 19</file>
+          <file> 13 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 41 43 52 24 15 48 47 58 25 19 63 49</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 13 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 41 43 52 24 15 48 47 58 25 19</file>
+          <file> 13 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 7 40 42 41 43 52 24 15 48 47 58 25 19 63 49</file>
         </tool>
       </inputs>
     </file>
@@ -238,7 +246,30 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 11 18 21 33 12 14 29 37 23 36</file>
+          <file> 11 18 59 21 33 12 14 29 37 23 36</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\infrastructure\src\infrastructure.c</name>
+      <outputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 59</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCSTM8</name>
+          <file> 63 49 7 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 40 42 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 49 7 57 51 46 9 44 8 34 31 53 30 38 56 28 16 50 54 39 45 40 42 41</file>
         </tool>
       </inputs>
     </file>

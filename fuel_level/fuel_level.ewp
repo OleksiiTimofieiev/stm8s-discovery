@@ -252,6 +252,7 @@
           <state>$PROJ_DIR$\interrupts\inc</state>
           <state>$PROJ_DIR$\config\inc</state>
           <state>$PROJ_DIR$\output\inc</state>
+          <state>$PROJ_DIR$\infrastructure\inc</state>
           <state>$PROJ_DIR$\</state>
         </option>
         <option>
@@ -1574,6 +1575,9 @@
   </configuration>
   <file>
     <name>$PROJ_DIR$\config\src\config.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\infrastructure\src\infrastructure.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\interrupts\src\interrupts.c</name>
