@@ -23,6 +23,10 @@
         <ColumnWidth3>69</ColumnWidth3>
       </Build>
       <TerminalIO/>
+      <Debug-Log>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>1381</ColumnWidth1>
+      </Debug-Log>
     </Static>
     <Windows>
       <Wnd0>
@@ -49,6 +53,12 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
+          <Tab>
+            <Identity>TabID-6061-18071</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
       </Wnd1>
@@ -63,9 +73,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>177</SelStart2>
-          <SelEnd2>177</SelEnd2>
+          <YPos2>9</YPos2>
+          <SelStart2>438</SelStart2>
+          <SelEnd2>438</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -75,7 +85,7 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
+          <YPos2>38</YPos2>
           <SelStart2>1533</SelStart2>
           <SelEnd2>1533</SelEnd2>
         </Tab>
@@ -100,10 +110,9 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>229</SelStart2>
-          <SelEnd2>229</SelEnd2>
+          <SelStart2>423</SelStart2>
+          <SelEnd2>423</SelEnd2>
         </Tab>
-        <ActiveTab>3</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\infrastructure\inc\infrastructure.h</Filename>
@@ -113,8 +122,21 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>217</SelStart2>
-          <SelEnd2>217</SelEnd2>
+          <SelStart2>256</SelStart2>
+          <SelEnd2>256</SelEnd2>
+        </Tab>
+        <ActiveTab>4</ActiveTab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\infrastructure\src\infrastructure.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>18</YPos2>
+          <SelStart2>454</SelStart2>
+          <SelEnd2>490</SelEnd2>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
