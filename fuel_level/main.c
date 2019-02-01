@@ -4,6 +4,7 @@
 #include "interrupts.h"
 #include "infrastructure.h" /* supporting funcs */
 
+// TODO: handle error with 22 + packet
 // TODO: parse to the structure, 2 bytes
 // TODO: GET_DATA_PARAMS with bitwise operations
 
