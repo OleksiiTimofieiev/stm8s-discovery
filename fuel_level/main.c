@@ -19,7 +19,8 @@ bool    packet_validation(uint8_t *data_buffer)
   //uint8_t x = crc8(data_buffer, 8);
   //putchar_UART(x);
   
-  if (
+  if 
+    (
         data_buffer[0] == PACKET_PREFIX &&
         data_buffer[1] == PACKET_NET_ADDRESS &&
         data_buffer[2] == PACKET_CODE_OPERATION &&
@@ -35,7 +36,8 @@ void    logic(void)
   {
 //       putchar_UART('a');
       received_full_packet = FALSE;
-      print_UART(data_buffer);
+      if (packet_validation(data_buffer))
+        print_UART(data_buffer); /* do smth */
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   }
@@ -43,7 +45,7 @@ void    logic(void)
   {
 //       putchar_UART('b');
       if (packet_validation(data_buffer))
-        print_UART(data_buffer);
+        print_UART(data_buffer); /* do smth */
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   }
