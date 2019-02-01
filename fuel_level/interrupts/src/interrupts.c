@@ -1,7 +1,7 @@
 #include "interrupts.h"
 
-extern int i;
-extern uint8_t data[10];
+extern int buffer_iterator;
+extern uint8_t data_buffer[10];
 extern int timer_stop_event;
 extern int milliseconds;
 extern bool byte_received;
@@ -12,9 +12,8 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
   int i = 0;
   while(i < 10)
-  {
-	putchar_UART(data[i++]);
-  }
+    putchar_UART(data[i++]);
+  putchar_UART('\n');
 }
 
 //#include "stdio.h"
@@ -41,7 +40,7 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
 	  //if (i < 10)
 	  //{
-		data[i++] = getchar();
+		data_buffer[buffer_iterator++] = getchar();
 		putchar_UART('x');
 		byte_received = TRUE;
 	  //}
@@ -64,10 +63,10 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 	{
 	  putchar_UART('1');
 	  byte_received = FALSE;
-	  i = 0;
+	  buffer_iterator = 0;
 	}
 	else
-	  print_UART(data);
+	  print_UART(data_buffer);
   }
   
   /* Cleat Interrupt Pending bit */

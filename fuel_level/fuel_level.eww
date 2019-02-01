@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\..\fuel_level\fuel_level.ewp</path>
+    <path>$WS_DIR$\fuel_level.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

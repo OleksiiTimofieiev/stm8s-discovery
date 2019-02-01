@@ -7,27 +7,23 @@ void CLK_Config(void)
 }
 
 void UART2_Config(void)
-{
-  	// stop bit and start bit -> 960 bytes per second with 9600 baud;
-  	// https://en.wikipedia.org/wiki/Baud
-  	// stop bit and start bit -> 960 bytes per second;
-  
-  	/* Deinitializes the UART1 and UART3 peripheral */
+{ 
+    /* Deinitializes the UART1 and UART3 peripheral */
     UART2_DeInit();
     
     /* Configure the UART2 */
- 	UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
-                UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
+    UART2_Init((uint32_t)115200, UART2_WORDLENGTH_8D, UART2_STOPBITS_1, UART2_PARITY_NO,
+               UART2_SYNCMODE_CLOCK_DISABLE, UART2_MODE_TXRX_ENABLE);
 
     /* Enable UART2 Receive interrupt */
     UART2_ITConfig(UART2_IT_RXNE_OR, ENABLE);
-	//UART2_ITConfig(UART2_IT_TXE, ENABLE);
+    // UART2_ITConfig(UART2_IT_TXE, ENABLE); /* TX interrupt activation */
     
-	/* enable UART2 peripheral */
-	UART2_Cmd(ENABLE);
+    /* enable UART2 peripheral */
+    UART2_Cmd(ENABLE);
 	
     /* Enable general interrupts */
-    enableInterrupts();    
+    enableInterrupts(); /* all activated interrupts have to be defined in the vector table */
 }
 
 void TIM4_Config_Fuel(void)
