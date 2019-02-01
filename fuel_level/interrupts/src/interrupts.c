@@ -63,7 +63,6 @@ extern bool received_full_packet;
   
   /* Cleat Interrupt Pending bit */
   TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
-  
   // ? stop of the timer;
 }
 
