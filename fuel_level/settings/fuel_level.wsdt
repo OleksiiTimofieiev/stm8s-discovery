@@ -73,34 +73,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>30</YPos2>
-          <SelStart2>1336</SelStart2>
-          <SelEnd2>1336</SelEnd2>
-        </Tab>
-        <ActiveTab>0</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\interrupts\src\interrupts.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>22</YPos2>
-          <SelStart2>1533</SelStart2>
-          <SelEnd2>1533</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\interrupts\inc\interrupts.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>181</SelStart2>
-          <SelEnd2>181</SelEnd2>
+          <YPos2>12</YPos2>
+          <SelStart2>442</SelStart2>
+          <SelEnd2>442</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -111,33 +86,10 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>0</YPos2>
-          <SelStart2>423</SelStart2>
-          <SelEnd2>423</SelEnd2>
+          <SelStart2>497</SelStart2>
+          <SelEnd2>497</SelEnd2>
         </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\infrastructure\inc\infrastructure.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>256</SelStart2>
-          <SelEnd2>256</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\infrastructure\src\infrastructure.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>363</SelStart2>
-          <SelEnd2>363</SelEnd2>
-        </Tab>
+        <ActiveTab>1</ActiveTab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
