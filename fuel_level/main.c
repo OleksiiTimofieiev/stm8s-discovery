@@ -9,6 +9,17 @@ int	buffer_iterator = 0;
 int     timer_stop_event = 0;
 int     milliseconds = 0;
 bool    byte_received = FALSE;
+bool    received_full_packet = FALSE;
+
+
+/*
+logic
+
+int length = data_buf_length(data_buffer);
+                
+                if (length == REQUEST_6_REPLY)
+                  memset(data_buffer, 0x0, sizeof(data_buffer));
+*/
 
 void main( void )
 {
@@ -16,7 +27,23 @@ void main( void )
    
   while (1)
   {
-	;
+    if (received_full_packet)
+    {
+      //putchar_UART('a');
+      received_full_packet = FALSE;
+      
+      
+      print_UART(data_buffer);
+      buffer_iterator = 0;
+      memset(data_buffer, 0x0, sizeof(data_buffer));
+    }
+    else if (data_buf_length(data_buffer) == REQUEST_6_REPLY)
+    {
+      //putchar_UART('b');
+      print_UART(data_buffer);
+      buffer_iterator = 0;
+      memset(data_buffer, 0x0, sizeof(data_buffer));
+    }
   }
 }
 

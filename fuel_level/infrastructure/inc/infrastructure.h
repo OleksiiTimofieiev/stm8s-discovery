@@ -6,5 +6,7 @@
 
 void    set_up_peripherals(void);
 void	print_UART(uint8_t *data);
+int     data_buf_length(uint8_t * data_buffer);
+
 
 #endif

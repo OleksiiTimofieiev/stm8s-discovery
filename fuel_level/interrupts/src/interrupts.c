@@ -5,6 +5,7 @@ extern uint8_t data_buffer[10];
 extern int timer_stop_event;
 extern int milliseconds;
 extern bool byte_received;
+extern bool received_full_packet;
 
 //#include "stdio.h"
 
@@ -31,7 +32,7 @@ extern bool byte_received;
 	  //if (i < 10)
 	  //{
 		data_buffer[buffer_iterator++] = getchar();
-		putchar_UART('x');
+		//putchar_UART('x');
 		byte_received = TRUE;
 	  //}
 	  //else
@@ -40,7 +41,7 @@ extern bool byte_received;
       // UART2_ITConfig(UART2_IT_RXNE_OR, DISABLE);
     }
  
- INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
+ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23) /* flag */
 {
   milliseconds++;
   
@@ -51,12 +52,13 @@ extern bool byte_received;
 	// memset(data, 0x0, sizeof(data));
 	if (byte_received == TRUE)
 	{
-	  putchar_UART('1');
+	  //putchar_UART('1');
 	  byte_received = FALSE;
-	  buffer_iterator = 0;
+	  //buffer_iterator = 0;
 	}
 	else
-	  print_UART(data_buffer);
+          received_full_packet = TRUE;
+	  //print_UART(data_buffer);
   }
   
   /* Cleat Interrupt Pending bit */
