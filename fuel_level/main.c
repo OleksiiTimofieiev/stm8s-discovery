@@ -48,12 +48,13 @@ void    logic(void)
       memset(data_buffer, 0x0, sizeof(data_buffer));
   }
 }
+
 void main( void )
 {
   set_up_peripherals();
    
   while (1)
-    logic();
+    logic(); /* pass struct here, struct has to be for all params with u16 or float ? */
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
