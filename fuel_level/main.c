@@ -89,7 +89,7 @@ void    logic(void)
       memset(data_buffer, 0x0, sizeof(data_buffer));
       byte_received = FALSE;
   } 
-//   else if (byte_received == FALSE)
+//   else if (byte_received == FALSE) /* clear these stuff */
 //  {
 ////    putchar_UART('c');
 //    buffer_iterator = 0;
