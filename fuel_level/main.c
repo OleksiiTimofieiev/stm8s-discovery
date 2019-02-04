@@ -13,6 +13,13 @@ int     milliseconds = 0;
 bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
 
+void    sendRequest(void)
+{
+  putchar_UART('1');
+  putchar_UART('2');
+  putchar_UART('3');
+}
+
 typedef struct  s_REQUEST_6_response
 {
   uint8_t       temperature;
@@ -101,6 +108,8 @@ void    logic(void)
 void main( void )
 {
   set_up_peripherals();
+  
+  sendRequest();
    
   while (1)
     logic(); /* pass struct here, struct has to be for all params with u16 or float ? */
