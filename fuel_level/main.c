@@ -4,8 +4,7 @@
 #include "interrupts.h"
 #include "infrastructure.h" /* supporting funcs */
 
-// TODO: parse to the structure, 2 bytes
-// TODO: GET_DATA_PARAMS with bitwise operations
+// TODO: send / response logic;
 
 uint8_t data_buffer[DATA_BUFFER_SIZE] = { 0x0 };
 int	buffer_iterator = 0;
