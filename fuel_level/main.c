@@ -61,8 +61,8 @@ void    logic(void)
   
   if (received_full_packet) /* add data processing routines */
   {
-//       putchar_UART('a');
-    zero(&data);
+//      putchar_UART('a');
+      zero(&data);
     
       received_full_packet = FALSE;
       if (packet_validation(data_buffer))
@@ -70,12 +70,12 @@ void    logic(void)
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   }
-  else if (data_buf_length(data_buffer) == REQUEST_6_REPLY_LENGTH)
+  else if (buffer_iterator == REQUEST_6_REPLY_LENGTH)
   {
 //       putchar_UART('b');
       if (packet_validation(data_buffer))
       {
-        print_UART(data_buffer); /* handle information */
+//        print_UART(data_buffer); /* handle information */
         
         zero(&data);
         
@@ -86,15 +86,14 @@ void    logic(void)
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   } 
-  /* else if (byte_received == FALSE)
-  {
+//   else if (byte_received == FALSE)
+//  {
 //    putchar_UART('c');
-    buffer_iterator = 0;
-    memset(data_buffer, 0x0, sizeof(data_buffer));
-    
-     for (int i = 0; i < 100000; i++); 
-  }
-  */
+//    buffer_iterator = 0;
+//    memset(data_buffer, 0x0, sizeof(data_buffer));
+//    
+//     for (int i = 0; i < 100000; i++); 
+//  }
 }
 
 void main( void )

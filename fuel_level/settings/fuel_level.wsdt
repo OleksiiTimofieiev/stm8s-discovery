@@ -62,11 +62,35 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>41</YPos2>
-          <SelStart2>1969</SelStart2>
-          <SelEnd2>1969</SelEnd2>
+          <YPos2>60</YPos2>
+          <SelStart2>1479</SelStart2>
+          <SelEnd2>1479</SelEnd2>
         </Tab>
         <ActiveTab>0</ActiveTab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\output\src\output.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>0</YPos2>
+          <SelStart2>21</SelStart2>
+          <SelEnd2>21</SelEnd2>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\infrastructure\src\infrastructure.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>6</YPos2>
+          <SelStart2>404</SelStart2>
+          <SelEnd2>404</SelEnd2>
+        </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>

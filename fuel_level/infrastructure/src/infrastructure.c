@@ -11,7 +11,7 @@ void	print_UART(uint8_t *data) /* len is constantly 10 */
 {
   int i = 0;
   
-  while(data[i] != 0x0)
+  while(i < 9)
     putchar_UART(data[i++]);
   if (i != 0x0)
     putchar_UART('\n');
