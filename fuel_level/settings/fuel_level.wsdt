@@ -23,16 +23,12 @@
         <ColumnWidth3>69</ColumnWidth3>
       </Build>
       <TerminalIO/>
-      <Debug-Log>
-        <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>1381</ColumnWidth1>
-      </Debug-Log>
     </Static>
     <Windows>
-      <Wnd2>
+      <Wnd0>
         <Tabs>
           <Tab>
-            <Identity>TabID-8755-27454</Identity>
+            <Identity>TabID-2052-31613</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -43,24 +39,18 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
-      <Wnd3>
+      </Wnd0>
+      <Wnd1>
         <Tabs>
           <Tab>
-            <Identity>TabID-13753-27565</Identity>
+            <Identity>TabID-30931-31891</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
           </Tab>
-          <Tab>
-            <Identity>TabID-6061-18071</Identity>
-            <TabName>Debug Log</TabName>
-            <Factory>Debug-Log</Factory>
-            <Session/>
-          </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd3>
+      </Wnd1>
     </Windows>
     <Editor>
       <Pane>
@@ -71,24 +61,12 @@
           <YPos>0</YPos>
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
-          <XPos2>20</XPos2>
-          <YPos2>0</YPos2>
-          <SelStart2>2049</SelStart2>
-          <SelEnd2>2049</SelEnd2>
+          <XPos2>0</XPos2>
+          <YPos2>41</YPos2>
+          <SelStart2>1969</SelStart2>
+          <SelEnd2>1969</SelEnd2>
         </Tab>
         <ActiveTab>0</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\interrupts\src\interrupts.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>26</YPos2>
-          <SelStart2>0</SelStart2>
-          <SelEnd2>0</SelEnd2>
-        </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -103,9 +81,9 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-00e925b0>
+            <Toolbar-00ed25b0>
               <key>iaridepm.enu1</key>
-            </Toolbar-00e925b0>
+            </Toolbar-00ed25b0>
           </Sizes>
         </Row0>
         <Row1>
@@ -118,7 +96,7 @@
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd0>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -133,7 +111,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>705379</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd0>
           </Sizes>
         </Row0>
       </Left>
@@ -145,7 +123,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd3>
+            <Wnd1>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -160,7 +138,7 @@
                 <sizeVertCX>138889</sizeVertCX>
                 <sizeVertCY>244499</sizeVertCY>
               </Rect>
-            </Wnd3>
+            </Wnd1>
           </Sizes>
         </Row0>
       </Bottom>
