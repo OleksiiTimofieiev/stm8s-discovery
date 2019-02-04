@@ -86,14 +86,14 @@ void    logic(void)
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   } 
-//   else if (byte_received == FALSE)
-//  {
+   else if (byte_received == FALSE)
+  {
 //    putchar_UART('c');
-//    buffer_iterator = 0;
-//    memset(data_buffer, 0x0, sizeof(data_buffer));
-//    
+    buffer_iterator = 0;
+    memset(data_buffer, 0x0, sizeof(data_buffer));
+    
 //     for (int i = 0; i < 100000; i++); 
-//  }
+  }
 }
 
 void main( void )
