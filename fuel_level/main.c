@@ -15,6 +15,24 @@ int     milliseconds = 0;
 bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
 
+typedef struct  s_REQUEST_6_response
+{
+  uint8_t       temperature;
+  uint16_t      relative_level;
+  uint16_t      frequency;
+}               t_REQUEST_6_response;
+
+t_REQUEST_6_response get_data(uint8_t *data_buffer)
+{
+  t_REQUEST_6_response  data;
+  
+  data.temperature = 0;
+  data.relative_level = 0;
+  data.frequency = 0;
+  
+  return (data);
+}
+
 bool    packet_validation(uint8_t *data_buffer)
 {
   //uint8_t x = crc8(data_buffer, 8);
@@ -38,7 +56,7 @@ void    logic(void)
 //       putchar_UART('a');
       received_full_packet = FALSE;
       if (packet_validation(data_buffer))
-        print_UART(data_buffer); /* do smth */
+        print_UART(data_buffer); /* handle information */
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
   }
@@ -46,9 +64,17 @@ void    logic(void)
   {
 //       putchar_UART('b');
       if (packet_validation(data_buffer))
-        print_UART(data_buffer); /* do smth */
+        print_UART(data_buffer); /* handle information */
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
+  } 
+  else if (byte_received == FALSE)
+  {
+//    putchar_UART('c');
+    buffer_iterator = 0;
+    memset(data_buffer, 0x0, sizeof(data_buffer));
+    
+    /* for (int i = 0; i < 100000; i++); */
   }
 }
 
