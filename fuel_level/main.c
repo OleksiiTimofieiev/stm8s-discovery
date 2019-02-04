@@ -26,8 +26,8 @@ t_REQUEST_6_response get_data(uint8_t *data_buffer)
   t_REQUEST_6_response  data;
   
   data.temperature = data_buffer[3];
-  data.relative_level = 0;
-  data.frequency = 0;
+  data.relative_level = (uint16_t) (data_buffer[4] << 8 | data_buffer[5]);
+  data.frequency = (uint16_t) (data_buffer[6] << 8 | data_buffer[7]);
   
   return (data);
 }
@@ -69,6 +69,7 @@ void    logic(void)
         print_UART(data_buffer); /* handle information */
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
+      byte_received = FALSE;
   }
   else if (buffer_iterator == REQUEST_6_REPLY_LENGTH)
   {
@@ -76,24 +77,26 @@ void    logic(void)
       if (packet_validation(data_buffer))
       {
 //        print_UART(data_buffer); /* handle information */
-        
         zero(&data);
         
         data = get_data(data_buffer);
         
         putchar_UART(data.temperature);
+        putchar_UART(data.relative_level);
+        putchar_UART(data.frequency);
       }
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
+      byte_received = FALSE;
   } 
-   else if (byte_received == FALSE)
-  {
-//    putchar_UART('c');
-    buffer_iterator = 0;
-    memset(data_buffer, 0x0, sizeof(data_buffer));
-    
-//     for (int i = 0; i < 100000; i++); 
-  }
+//   else if (byte_received == FALSE)
+//  {
+////    putchar_UART('c');
+//    buffer_iterator = 0;
+//    memset(data_buffer, 0x0, sizeof(data_buffer));
+//    
+////    for (int i = 0; i < 100000; i++); 
+//  }
 }
 
 void main( void )
