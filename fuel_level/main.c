@@ -4,8 +4,6 @@
 #include "interrupts.h"
 #include "infrastructure.h" /* supporting funcs */
 
-// TODO: send / response logic;
-
 uint8_t data_buffer[DATA_BUFFER_SIZE] = { 0x0 };
 int	buffer_iterator = 0;
 int     timer_stop_event = 0;
@@ -109,7 +107,7 @@ void main( void )
 {
   set_up_peripherals();
   
-  sendRequest();
+//  sendRequest();
    
   while (1)
     logic(); /* pass struct here, struct has to be for all params with u16 or float ? */
