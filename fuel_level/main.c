@@ -20,6 +20,16 @@ void    (*p[4]) (uint8_t *request_line);
 // TODO: remaster files to the normal reading format;
 // TODO: if we have 00 address reply on the line; (some type of the function) default is not 00 address;
 // TODO: handle responses from the separate devices;
+// TODO: manage several devices on the line;
+//
+//ДУТ 
+//
+//- Конфигурированиях параметры
+//- Самодиагностика
+//- Калман
+//- Передача данных на модем
+//- Средние значениz
+
 
 struct:
   {
