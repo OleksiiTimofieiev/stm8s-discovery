@@ -49,3 +49,9 @@ uint8_t crc8(uint8_t *data, int len) /* len == 8, packet without CRC */
  }
  return (crc);
 }
+
+void    send_request(uint8_t * request_line)
+{
+  while (*request_line)
+    putchar_UART(*request_line++);
+}

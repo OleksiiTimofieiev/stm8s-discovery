@@ -10,7 +10,7 @@
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>124</Column0>
+          <Column0>107</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
@@ -34,6 +34,7 @@
             <Session>
               <NodeDict>
                 <ExpandedNode>fuel_level</ExpandedNode>
+                <ExpandedNode>fuel_level/infrastructure.c</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
@@ -62,9 +63,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>59</YPos2>
-          <SelStart2>2721</SelStart2>
-          <SelEnd2>2739</SelEnd2>
+          <YPos2>20</YPos2>
+          <SelStart2>3224</SelStart2>
+          <SelEnd2>3224</SelEnd2>
         </Tab>
         <ActiveTab>0</ActiveTab>
         <Tab>
@@ -78,6 +79,18 @@
           <YPos2>14</YPos2>
           <SelStart2>544</SelStart2>
           <SelEnd2>544</SelEnd2>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\infrastructure\src\infrastructure.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>6</YPos2>
+          <SelStart2>921</SelStart2>
+          <SelEnd2>943</SelEnd2>
         </Tab>
       </Pane>
       <ActivePane>0</ActivePane>

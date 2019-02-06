@@ -10,13 +10,13 @@ int     timer_stop_event = 0;
 int     milliseconds = 0;
 bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
+uint8_t device_address[4] = { 0x0 };
 
-void    sendRequest(void)
-{
-  putchar_UART('1');
-  putchar_UART('2');
-  putchar_UART('3');
-}
+void    (*p[4]) (uint8_t * request_line);
+
+// TODO: array of structures with funcs and other details for the different models of the devices;
+// TODO: array of function pointers / structs with functions;
+// TODO: remaster files to the normal reading format;
 
 typedef struct  s_REQUEST_6_response
 {
@@ -61,7 +61,7 @@ bool    packet_validation(uint8_t *data_buffer)
 
 void    logic(void)
 {
-  t_REQUEST_6_response data;
+  t_REQUEST_6_response data; // maximum byte to handle information, if 1-4 byte then bitwise operations;
   
   if (received_full_packet) /* add data processing routines */
   {
@@ -103,14 +103,20 @@ void    logic(void)
 //  }
 }
 
+void    init_array_of_funcs(void)
+{
+  p[0] = &send_request;
+  p[1] = &send_request;
+  p[2] = &send_request;
+  p[3] = &send_request;
+}
+
 void main( void )
 {
   set_up_peripherals();
-  
-//  sendRequest();
    
   while (1)
-    logic(); /* pass struct here, struct has to be for all params with u16 or float ? */
+    logic(); /* remaster according to the new architecture format */
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
