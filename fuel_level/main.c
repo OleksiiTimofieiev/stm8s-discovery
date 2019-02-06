@@ -12,24 +12,19 @@ bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
 uint8_t device_address[4] = { 0x0 };
 
-void    (*p[4]) (uint8_t *request_line);
+void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
 
-// TODO: external configuration through UART (do nothing until configured);
+// TODO: external configuration through UART (do nothing until configured <- if any device has 0x0 address it will be estimated as unconfigured);
 // TODO: array of structures with funcs and other details for the different models of the devices;
 // TODO: array of function pointers / structs with functions;
 // TODO: remaster files to the normal reading format;
 // TODO: if we have 00 address reply on the line; (some type of the function) default is not 00 address;
 // TODO: handle responses from the separate devices;
 // TODO: manage several devices on the line;
-//
-//ДУТ 
-//
-//- Конфигурированиях параметры
-//- Самодиагностика
-//- Калман
-//- Передача данных на модем
-//- Средние значениz
-
+// TODO: self diagnostics (device address <- reply for the configuration request after reset)
+// TODO: send data to the modem (in the end);
+// TODO: working out the data after several replies -> define the quantity of the reply to analysis purposes;
+// TOFO: analyze the data: Kalman and average level of the params;
 
 struct:
   {
