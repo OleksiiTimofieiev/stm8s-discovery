@@ -12,11 +12,22 @@ bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
 uint8_t device_address[4] = { 0x0 };
 
-void    (*p[4]) (uint8_t * request_line);
+void    (*p[4]) (uint8_t *request_line);
 
+// TODO: external configuration through UART (do nothing until configured);
 // TODO: array of structures with funcs and other details for the different models of the devices;
 // TODO: array of function pointers / structs with functions;
 // TODO: remaster files to the normal reading format;
+// TODO: if we have 00 address reply on the line; (some type of the function) default is not 00 address;
+// TODO: handle responses from the separate devices;
+
+struct:
+  {
+    type of the logger
+      address of the logger
+        request functions array
+          handling functions array
+  }
 
 typedef struct  s_REQUEST_6_response
 {

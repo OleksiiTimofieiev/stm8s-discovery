@@ -63,35 +63,11 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>20</YPos2>
-          <SelStart2>3224</SelStart2>
-          <SelEnd2>3224</SelEnd2>
+          <YPos2>0</YPos2>
+          <SelStart2>967</SelStart2>
+          <SelEnd2>967</SelEnd2>
         </Tab>
         <ActiveTab>0</ActiveTab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\interrupts\src\interrupts.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>14</YPos2>
-          <SelStart2>544</SelStart2>
-          <SelEnd2>544</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\infrastructure\src\infrastructure.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>6</YPos2>
-          <SelStart2>921</SelStart2>
-          <SelEnd2>943</SelEnd2>
-        </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
