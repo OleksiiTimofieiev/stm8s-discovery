@@ -153,10 +153,6 @@
       <name>$PROJ_DIR$\main.c</name>
       <outputs>
         <tool>
-          <name>ICCSTM8</name>
-          <file> 34</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 10</file>
         </tool>
