@@ -14,6 +14,7 @@ uint8_t device_address[4] = { 0x0 };
 
 void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
 
+// TODO: do nothing if the device is not configured or notify the user with LED or etc;
 // TODO: external configuration through UART (do nothing until configured <- if any device has 0x0 address it will be estimated as unconfigured);
 // TODO: array of structures with funcs and other details for the different models of the devices;
 // TODO: array of function pointers / structs with functions;
@@ -25,6 +26,7 @@ void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
 // TODO: send data to the modem (in the end);
 // TODO: working out the data after several replies -> define the quantity of the reply to analysis purposes;
 // TOFO: analyze the data: Kalman and average level of the params;
+// TODO: active / passive timers;
 
 struct:
   {
