@@ -40,8 +40,8 @@ void    init(bool    *successful_init) // if timeout -> break the process of ini
     }
   }
   buffer_iterator = 0;
-    memset(data_buffer, 0x0, sizeof(data_buffer));
-    byte_received = FALSE;
+  memset(data_buffer, 0x0, sizeof(data_buffer));
+  byte_received = FALSE;
   
   if (i == 4)
     *successful_init = TRUE;
@@ -76,8 +76,8 @@ void    zero(t_REQUEST_6_response *data)
 
 bool    packet_validation(uint8_t *data_buffer)
 {
-//  uint8_t x = crc8(data_buffer, 8);
-//  putchar_UART(x);
+  //  uint8_t x = crc8(data_buffer, 8);
+  //  putchar_UART(x);
   
   if 
     (
@@ -137,29 +137,42 @@ void    logic(void)
 //  }
 }
 
-void    init_array_of_funcs(void)
-{
-  p[0] = &send_request;
-  p[1] = &send_request;
-  p[2] = &send_request;
-  p[3] = &send_request;
-}
+//void    init_array_of_funcs(void)
+//{
+//  p[0] = &send_request;
+//  p[1] = &send_request;
+//  p[2] = &send_request;
+//  p[3] = &send_request;
+//}
 
 void main( void )
 {
   set_up_peripherals();
   
-  int *data = malloc(sizeof(int)*4); // for init structure and etc.
+//  int *data = malloc(sizeof(int)*4); // for init structure and etc.
   
-  while (1)
+  while (TRUE)
   {
     if (logger_init_request_status != 4) // request status != previous
       init(&successful_init);
-    
-    if(successful_init)
-      logic(); /* remaster according to the new architecture format */
     else
       break ;
+  }
+  
+  if (!successful_init)
+  {
+    putchar_UART('z');
+    exit(0) ;
+  }
+  else
+  {
+    while(TRUE)
+    {
+      if(successful_init)
+        logic(); /* remaster according to the new architecture format */
+      else
+        break ;
+    }
   }
 }
 
