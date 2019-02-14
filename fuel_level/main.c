@@ -14,6 +14,7 @@ uint8_t device_address[4] = { 0x0 };
 bool    successful_init = FALSE;
 uint8_t devise_addresses[4] = {0x1, 0x2, 0x3, 0x4};
 int     iterator={0};
+int     logger_init_request_status = {0};
 
 void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
 bool    packet_validation(uint8_t *data_buffer);
@@ -26,7 +27,7 @@ bool    packet_validation(uint8_t *data_buffer);
 //          handling functions array
 //  }
 
-void    init(bool    *successful_init) // if timeout -> break the process of initialization
+void    init(bool    *successful_init) // if timeout -> break the process of initialization //check different data buffers
 {
   int i = 0;
   
@@ -34,13 +35,13 @@ void    init(bool    *successful_init) // if timeout -> break the process of ini
   {
     if (packet_validation(data_buffer))
     {
-          print_UART(data_buffer); /* success */          
+          print_UART(data_buffer); /* success */      
+          i++;
     }
-    buffer_iterator = 0;
+  }
+  buffer_iterator = 0;
     memset(data_buffer, 0x0, sizeof(data_buffer));
     byte_received = FALSE;
-    i++;
-  }
   
   if (i == 4)
     *successful_init = TRUE;
@@ -147,17 +148,18 @@ void    init_array_of_funcs(void)
 void main( void )
 {
   set_up_peripherals();
-  init(&successful_init);
-   
+  
+  int *data = malloc(sizeof(int)*4); // for init structure and etc.
+  
   while (1)
   {
+    if (logger_init_request_status != 4) // request status != previous
+      init(&successful_init);
+    
     if(successful_init)
       logic(); /* remaster according to the new architecture format */
     else
-    {
-      putchar_UART('x');
       break ;
-    }
   }
 }
 

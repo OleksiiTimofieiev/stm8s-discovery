@@ -1,11 +1,13 @@
 #include "interrupts.h"
 
+extern int  logger_init_request_status;
 extern int buffer_iterator;
 extern uint8_t data_buffer[10];
 extern int timer_stop_event;
 extern int milliseconds;
 extern bool byte_received;
 extern bool received_full_packet;
+
 
 //#include "stdio.h"
 
@@ -29,6 +31,7 @@ extern bool received_full_packet;
 
  INTERRUPT_HANDLER(UART2_RX_IRQHandler, 21)
 {
+  // switch case for the buffers according to the request timeout;
 	  //if (i < 10)
 	  //{
 		data_buffer[buffer_iterator++] = getchar();
@@ -44,6 +47,11 @@ extern bool received_full_packet;
  INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23) /* flag */
 {
   milliseconds++;
+  
+  if (logger_init_request_status == 0)
+    send_request("a");
+  else if (logger_init_request_status == 1)
+    send_request("b");
   
   if (milliseconds == TIMER_PERIOD)
   {
