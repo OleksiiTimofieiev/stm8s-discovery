@@ -13,7 +13,7 @@ bool    received_full_packet = FALSE;
 uint8_t device_address[4] = { 0x0 };
 bool    successful_init = FALSE;
 uint8_t devise_addresses[4] = {0x1, 0x2, 0x3, 0x4};
-int     iterator={0};
+int     iterator = {0};
 int     logger_init_request_status = {0};
 
 void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
@@ -42,6 +42,7 @@ void    init(bool    *successful_init) // if timeout -> break the process of ini
   buffer_iterator = 0;
   memset(data_buffer, 0x0, sizeof(data_buffer));
   byte_received = FALSE;
+  received_full_packet = FALSE;
   
   if (i == 4)
     *successful_init = TRUE;
@@ -153,7 +154,7 @@ void main( void )
   
   while (TRUE)
   {
-    if (logger_init_request_status != 4) // request status != previous
+    if (logger_init_request_status != 4 && received_full_packet) // request status != previous
       init(&successful_init);
     else
       break ;
@@ -162,7 +163,7 @@ void main( void )
   if (!successful_init)
   {
     putchar_UART('z');
-    exit(0) ;
+    exit(0);
   }
   else
   {
