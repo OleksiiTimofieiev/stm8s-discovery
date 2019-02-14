@@ -11,30 +11,40 @@ int     milliseconds = 0;
 bool    byte_received = FALSE;
 bool    received_full_packet = FALSE;
 uint8_t device_address[4] = { 0x0 };
+bool    successful_init = FALSE;
+uint8_t devise_addresses[4] = {0x1, 0x2, 0x3, 0x4};
+int     iterator={0};
 
 void    (*p[4]) (uint8_t *request_line); // array of functions of any type;
+bool    packet_validation(uint8_t *data_buffer);
 
-// TODO: do nothing if the device is not configured or notify the user with LED or etc;
-// TODO: external configuration through UART (do nothing until configured <- if any device has 0x0 address it will be estimated as unconfigured);
-// TODO: array of structures with funcs and other details for the different models of the devices;
-// TODO: array of function pointers / structs with functions;
-// TODO: remaster files to the normal reading format;
-// TODO: if we have 00 address reply on the line; (some type of the function) default is not 00 address;
-// TODO: handle responses from the separate devices;
-// TODO: manage several devices on the line;
-// TODO: self diagnostics (device address <- reply for the configuration request after reset)
-// TODO: send data to the modem (in the end);
-// TODO: working out the data after several replies -> define the quantity of the reply to analysis purposes;
-// TOFO: analyze the data: Kalman and average level of the params;
-// TODO: active / passive timers;
+//struct:
+//  {
+//    type of the logger
+//      address of the logger
+//        request functions array
+//          handling functions array
+//  }
 
-struct:
+void    init(bool    *successful_init) // if timeout -> break the process of initialization
+{
+  int i = 0;
+  
+  if (data_buffer[2] == devise_addresses[0])
   {
-    type of the logger
-      address of the logger
-        request functions array
-          handling functions array
+    if (packet_validation(data_buffer))
+    {
+          print_UART(data_buffer); /* success */          
+    }
+    buffer_iterator = 0;
+    memset(data_buffer, 0x0, sizeof(data_buffer));
+    byte_received = FALSE;
+    i++;
   }
+  
+  if (i == 4)
+    *successful_init = TRUE;
+}
 
 typedef struct  s_REQUEST_6_response
 {
@@ -42,6 +52,8 @@ typedef struct  s_REQUEST_6_response
   uint16_t      relative_level;
   uint16_t      frequency;
 }               t_REQUEST_6_response;
+
+t_REQUEST_6_response x[20];
 
 t_REQUEST_6_response get_data(uint8_t *data_buffer)
 {
@@ -92,6 +104,8 @@ void    logic(void)
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
       byte_received = FALSE;
+      
+      x[iterator++] = data;
   }
   else if (buffer_iterator == REQUEST_6_REPLY_LENGTH)
   {
@@ -110,6 +124,7 @@ void    logic(void)
       buffer_iterator = 0;
       memset(data_buffer, 0x0, sizeof(data_buffer));
       byte_received = FALSE;
+      x[iterator++] = data;
   } 
 //   else if (byte_received == FALSE) /* clear these stuff */
 //  {
@@ -132,9 +147,18 @@ void    init_array_of_funcs(void)
 void main( void )
 {
   set_up_peripherals();
+  init(&successful_init);
    
   while (1)
-    logic(); /* remaster according to the new architecture format */
+  {
+    if(successful_init)
+      logic(); /* remaster according to the new architecture format */
+    else
+    {
+      putchar_UART('x');
+      break ;
+    }
+  }
 }
 
 void assert_failed(uint8_t* file, uint32_t line)
